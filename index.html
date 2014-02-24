@@ -77,13 +77,16 @@
 }
 </style>
 
-<body>
-    <a href="#2" onclick="$('.main').moveDown();"><h2 id="scroll-down">&gt;</h2></a>
+<body id="main">
+    <a href="#2" onclick="$('.main').moveDown();">
+        <h2 id="scroll-down">&gt;</h2>
+    </a>
     <div class="main">
         <section class="window">
+            <a id="fullscreen">Fullscreen</a>
             <div>
                 <h1>Eden S.-G.</h1>
-                <h4 style="color: #000;z-index: 10;font-size: 5vmin;position:relative;font-weight:100;">ASM2O</h4>
+                <h4 style="color: #000;z-index: 10;font-size: 5vmin;position:relative;font-weight:100;">Photography</h4>
             </div>
         </section>
         <section class="window images" style="background-image: url('img/Balance.png')">
@@ -161,9 +164,39 @@ $(document).ready(function() {
         // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
         // the browser's width is less than 600, the fallback will kick in.
     });
-
-
 });
+var e = document.getElementById("fullscreen");
+
+e.onclick = function() {
+
+    if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
+        RunPrefixMethod(document, "CancelFullScreen");
+    }
+    else {
+        RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
+    }
+
+}
+
+var pfx = ["webkit", "moz", "ms", "o", ""];
+function RunPrefixMethod(obj, method) {
+    
+    var p = 0, m, t;
+    while (p < pfx.length && !obj[m]) {
+        m = method;
+        if (pfx[p] == "") {
+            m = m.substr(0,1).toLowerCase() + m.substr(1);
+        }
+        m = pfx[p] + m;
+        t = typeof obj[m];
+        if (t != "undefined") {
+            pfx = [pfx[p]];
+            return (t == "function" ? obj[m]() : obj[m]);
+        }
+        p++;
+    }
+
+}
 </script>
 
 </html>
