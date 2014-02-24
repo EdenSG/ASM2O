@@ -11,7 +11,7 @@ body, html {
     color:#000;
     position: absolute;
     top:3vmin;
-    right: 3vmin;
+    left: 3vmin;
     z-index: 10;
     font-size: 2vmin;
     cursor: pointer;
