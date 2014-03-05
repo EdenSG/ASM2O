@@ -6,6 +6,8 @@ body, html {
     background-image: url('hex-tile.png');
     background-color: #999;
     font-weight: 100;
+    font-size: 16px;
+    font-size:3vmin;
 }
 #fullscreen {
     color:#000;
@@ -13,7 +15,7 @@ body, html {
     top:3vmin;
     left: 3vmin;
     z-index: 10;
-    font-size: 2vmin;
+    font-size: 0.666rem;
     cursor: pointer;
 }
 .window {
@@ -21,7 +23,6 @@ body, html {
     height: 100vh;
     margin: 0;
     padding: 0;
-    position: absolute;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -53,7 +54,7 @@ body, html {
     flex-direction:column;
 }
 .window #more {
-    font-size:4vmin;
+    font-size:1.333rem;
     background:rgba(255,255,255,0.6);
     border-radius: 3vmin;
     padding: 8vmin;
@@ -81,7 +82,7 @@ body, html {
     color:rgba(0,0,0,0.5);
     font-weight: 100;
     z-index:2;
-    font-size:12vmin;
+    font-size:3rem;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
     -webkit-transition:all 2s ease;
@@ -108,7 +109,7 @@ h1 {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     color: #fff;
-    font-size: 15vmin;
+    font-size: 3.75rem;
     text-align: center;
     box-shadow: 0 0 0 100vmax #fff;
     border-radius: 3vmin;
@@ -132,115 +133,16 @@ aside {
     top: 5vmin;
     right: 5vmin;
     background-color: rgba(255, 255, 255, 0.4);
-    font-size: 3vmin;
+    font-size: 1rem;
     padding: 4vmin;
     margin: 0;
 }
-/* One page scroll css */
- body, html {
-    margin: 0;
-    overflow: hidden;
-    -webkit-transition: opacity 400ms;
-    -moz-transition: opacity 400ms;
-    transition: opacity 400ms;
-}
-body, .onepage-wrapper, html {
-    display: block;
-    position: static;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-.onepage-wrapper {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
-    padding: 0;
-    -webkit-transform-style: preserve-3d;
-}
-.onepage-wrapper .section {
-    width: 100%;
-    height: 100%;
-}
-.onepage-pagination {
-    position: absolute;
-    right: 10px;
-    z-index: 5;
-    list-style: none;
-    margin: 0;
-    height: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-    -webkit-flex-direction:column;
-    -moz-box-orient:vertical;
-    -moz-box-direction:normal;
-    -ms-flex-direction:column;
-    flex-direction:column;
-    -webkit-box-pack:center;
-    -webkit-justify-content:center;
-    -moz-box-pack:center;
-    -ms-flex-pack:center;
-    justify-content:center;
-}
-.onepage-pagination li {
-    padding: 0;
-    text-align: center;
-}
-.onepage-pagination li a {
-    padding: 10px;
-    width: 4px;
-    height: 4px;
-    display: block;
-}
-.onepage-pagination li a:before {
-    content:'';
-    position: absolute;
-    width: 0;
-    height: 0;
-    background: transparent;
-    border: 2px solid black;
-    border-radius: 50px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3), 0 0 0 20px rgba(255, 255, 255, 0);
-    -webkit-transition:all 0.4s ease;
-    -moz-transition:all 0.4s ease;
-    transition:all 0.4s ease;
-}
-.onepage-pagination li a:hover:before {
-    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0), 0 0 0 2px rgba(25, 25, 25, 0.3);
-}
-.onepage-pagination li a.active:before {
-    background: transparent;
-    border-color: transparent;
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    transform: scale(2);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 1), 0 0 0 3px rgba(255, 255, 255, 0.3);
-}
-.disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
-    overflow: auto;
-}
-.disabled-onepage-scroll .onepage-wrapper .section {
-    position: relative !important;
-    top: auto !important;
-}
-.disabled-onepage-scroll .onepage-wrapper {
-    -webkit-transform: none !important;
-    -moz-transform: none !important;
-    transform: none !important;
-    -ms-transform: none !important;
-    min-height: 100%;
-}
-.disabled-onepage-scroll .onepage-pagination {
-    display: none;
-}
-body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
-    position: inherit;
+
+@media (max-width:400px), (max-height:400px) {
+    html, body {
+        font-size:15px;
+    }
+    #fullscreen {
+        font-size: 1rem;
+    }
 }

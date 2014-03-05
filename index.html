@@ -61,7 +61,7 @@
     bottom:7vmin;
     width:100%;
     text-align: center;
-    font-size: 3vmin;
+    font-size: 1rem;
 }
 .pace .pace-progress::before {
     content: attr(data-progress-text);
@@ -69,7 +69,7 @@
     top: 7vmin;
     width:100%;
     text-align: center;
-    font-size: 3vmin;
+    font-size: 1rem;
 }
 .pace.pace-inactive {
     opacity: 0;
@@ -86,7 +86,7 @@
             <a id="fullscreen">Fullscreen</a>
             <div>
                 <h1>Eden S.-G.</h1>
-                <h4 style="color: #000;z-index: 10;font-size: 5vmin;position:relative;font-weight:100;">Photography</h4>
+                <h4 style="color: #000;z-index: 10;font-size: 1.666rem;position:relative;font-weight:100;">Photography</h4>
             </div>
         </section>
         <section class="window images" style="background-image: url('img/Balance.png')">
@@ -142,7 +142,7 @@
 <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-
+    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css') );
     $(".main").onepage_scroll({
         sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
         easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
