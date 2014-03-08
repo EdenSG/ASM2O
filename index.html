@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html style="background:#fff">
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-    <title>Eden S.-G.</title>
+    <title>Elements &amp; Principles</title>
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/pace.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -86,54 +86,59 @@
             <a id="fullscreen">Fullscreen</a>
             <div>
                 <h1>Eden S.-G.</h1>
-                <h4 style="color: #000;z-index: 10;font-size: 1.666rem;position:relative;font-weight:100;">Photography</h4>
+                <div style="display: flex; text-align: center; flex-direction: row; justify-content: space-around; width: 100vw;">
+                    <h4 class="nav prev"><a class="nav prev trans" href="index.html"></a>
+                    <h4 class="nav current">Elements &amp; Principles</h4>
+                    <h4 class="nav next"><a class="nav next trans" href="filters.html">Filters</a>
+                    </h4>
+                </div>
             </div>
         </section>
-        <section class="window images" style="background-image: url('img/Balance.png')">
+        <section class="window images" style="background-image: url('img/EP/Balance.png')">
             <aside>Balance</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Colour.png')">
+        <section class="window images" style="background-image: url('img/EP/Colour.png')">
             <aside>Colour</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Emphasis.JPG')">
+        <section class="window images" style="background-image: url('img/EP/Emphasis.JPG')">
             <aside>Emphasis</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Form.png')">
+        <section class="window images" style="background-image: url('img/EP/Form.png')">
             <aside>Form</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Line.png')">
+        <section class="window images" style="background-image: url('img/EP/Line.png')">
             <aside>Line</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Pattern.png')">
+        <section class="window images" style="background-image: url('img/EP/Pattern.png')">
             <aside>Pattern</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Proportion.JPG')">
+        <section class="window images" style="background-image: url('img/EP/Proportion.JPG')">
             <aside>Proportion</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Rhythm (Movement).JPG')">
+        <section class="window images" style="background-image: url('img/EP/Rhythm (Movement).JPG')">
             <aside>Rhythm &amp; Movement</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Shape.png')">
+        <section class="window images" style="background-image: url('img/EP/Shape.png')">
             <aside>Shape</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Space.png')">
+        <section class="window images" style="background-image: url('img/EP/Space.png')">
             <aside>Space</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Texture.png')">
+        <section class="window images" style="background-image: url('img/EP/Texture.png')">
             <aside>Texture</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Unity.png')">
+        <section class="window images" style="background-image: url('img/EP/Unity.png')">
             <aside>Unity &amp; Harmony</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Value.png')">
+        <section class="window images" style="background-image: url('img/EP/Value.png')">
             <aside>Value</aside>
         </section>
-        <section class="window images" style="background-image: url('img/Variety.png')">
+        <section class="window images" style="background-image: url('img/EP/Variety.png')">
             <aside>Variety</aside>
         </section>
         <section class="window">
             <div>
-                <span id="more">See more at <a href="https://edensg.github.io/" target="_BLANK">edensg.github.io</a>.</span>
+                <span id="more">See more at <a class="trans" href="https://edensg.github.io/" target="_BLANK">edensg.github.io</a>.</span>
             </div>
         </section>
     </div>
@@ -141,8 +146,15 @@
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
 <script type="text/javascript">
+$(document).load(function() {
+    $("body").fadeIn(500);
+});
+$(document).mousemove(function(event) {
+    $("body").fadeIn(500);
+});
 $(document).ready(function() {
-    $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css') );
+    $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
+
     $(".main").onepage_scroll({
         sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
         easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
@@ -164,6 +176,15 @@ $(document).ready(function() {
         // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
         // the browser's width is less than 600, the fallback will kick in.
     });
+    $("a.trans").click(function(event) {
+        event.preventDefault();
+        linkLocation = this.href;
+        $("body").fadeOut(500, redirectPage);
+    });
+
+    function redirectPage() {
+        window.location = linkLocation;
+    }
 });
 var e = document.getElementById("fullscreen");
 
@@ -171,21 +192,22 @@ e.onclick = function() {
 
     if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
         RunPrefixMethod(document, "CancelFullScreen");
-    }
-    else {
+    } else {
         RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
     }
 
 }
 
 var pfx = ["webkit", "moz", "ms", "o", ""];
+
 function RunPrefixMethod(obj, method) {
-    
-    var p = 0, m, t;
+
+    var p = 0,
+        m, t;
     while (p < pfx.length && !obj[m]) {
         m = method;
         if (pfx[p] == "") {
-            m = m.substr(0,1).toLowerCase() + m.substr(1);
+            m = m.substr(0, 1).toLowerCase() + m.substr(1);
         }
         m = pfx[p] + m;
         t = typeof obj[m];
