@@ -7,75 +7,85 @@
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/pace.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Eden S.-G." />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/mstile-144x144.png" />
+    <style type="text/css">
+    .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 2000;
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 5vmin;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #000000;
+        border-left-width: 0;
+        border-right-width: 0;
+        -webkit-transition:all 1s ease-in-out;
+        -moz-transition:all 1s ease-in-out;
+        transition:all 1s ease-in-out;
+        box-shadow: 0 0 0 100vmax #fff;
+    }
+    .pace .pace-progress {
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        transition: all 1s ease;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        position: fixed;
+        z-index: 2000;
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        background: #000000;
+    }
+    .pace::after {
+        content:'Loading...';
+        position: absolute;
+        bottom:7vmin;
+        width:100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .pace .pace-progress::before {
+        content: attr(data-progress-text);
+        position: absolute;
+        top: 7vmin;
+        width:100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .pace.pace-inactive {
+        opacity: 0;
+        z-index: -10;
+    }
+    </style>
 </head>
-<style type="text/css">
-.pace {
-    -webkit-pointer-events: none;
-    pointer-events: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    z-index: 2000;
-    position: fixed;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 5vmin;
-    width: 100%;
-    background: #fff;
-    border: 1px solid #000000;
-    border-left-width: 0;
-    border-right-width: 0;
-    -webkit-transition:all 1s ease-in-out;
-    -moz-transition:all 1s ease-in-out;
-    transition:all 1s ease-in-out;
-    box-shadow: 0 0 0 100vmax #fff;
-}
-.pace .pace-progress {
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    transition: all 1s ease;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    position: fixed;
-    z-index: 2000;
-    display: block;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    background: #000000;
-}
-.pace::after {
-    content:'Loading...';
-    position: absolute;
-    bottom:7vmin;
-    width:100%;
-    text-align: center;
-    font-size: 1rem;
-}
-.pace .pace-progress::before {
-    content: attr(data-progress-text);
-    position: absolute;
-    top: 7vmin;
-    width:100%;
-    text-align: center;
-    font-size: 1rem;
-}
-.pace.pace-inactive {
-    opacity: 0;
-    z-index: -10;
-}
-</style>
 
 <body id="main">
     <a href="#2" onclick="$('.main').moveDown();">
@@ -88,9 +98,9 @@
                 <h1>Eden S.-G.</h1>
                 <div style="display: flex; text-align: center; flex-direction: row; justify-content: space-around; width: 100vw;">
                     <h4 class="nav prev"><a class="nav prev trans" href="index.html">Elements &amp; Principles</a>
-                    <h4 class="nav current">Filters</h4>
-                    <h4 class="nav next"><a class="nav next trans" href="filters.html"></a>
-                    </h4>
+                        <h4 class="nav current">Filters</h4>
+                        <h4 class="nav next"><a class="nav next trans" href="triptych.html">Triptych</a>
+                        </h4>
                 </div>
             </div>
         </section>
