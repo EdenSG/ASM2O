@@ -3,21 +3,22 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-    <title>Filters</title>
+    <title>Triptych</title>
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/pace.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="lightbox.css">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-16x16.png" sizes="16x16" />
     <meta name="application-name" content="Eden S.-G." />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/mstile-144x144.png" />
+    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/img/mstile-144x144.png" />
     <style type="text/css">
     .pace {
         -webkit-pointer-events: none;
@@ -26,7 +27,7 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        z-index: 999 ;
+        z-index: 999;
         position: fixed;
         margin: auto;
         top: 0;
@@ -105,114 +106,126 @@
             </div>
         </section>
         <section class="window triptych" style="display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;">
-            <div>
-                <a data-order="1" class="venobox" data-gall="maingall" href="img/Triptych/Streetlight.jpg">
-                    <img src="img/Triptych/Streetlight.jpg">
-                </a>
-            </div>
-            <div>
-                <a data-order="2" class="venobox" data-gall="maingall" href="img/Triptych/Outdoorlight.jpg">
-                    <img src="img/Triptych/Outdoorlight.jpg">
-                </a>
-            </div>
-            <div>
-                <a data-order="3" class="venobox" data-gall="maingall" href="img/Triptych/Spotlight.jpg">
-                    <img src="img/Triptych/Outdoorlight-double(triple)exposure.jpg">
-                </a>
+            <div id="fullscreenSlideshowContainer" style="display:inline-block;width:100%;height:100%;margin:0;padding:0;">
+                <div class="image">
+                    <a data-order="1" class="venobox" data-lightbox="maingall" href="img/Triptych/Streetlight.jpg">
+                        <img src="img/Triptych/Streetlight.jpg">
+                    </a>
+                </div>
+                <div class="image">
+                    <a data-order="2" class="venobox" data-lightbox="maingall" href="img/Triptych/Outdoorlight.jpg">
+                        <img src="img/Triptych/Outdoorlight.jpg">
+                    </a>
+                </div>
+                <div class="image">
+                    <a data-order="3" class="venobox" data-lightbox="maingall" href="img/Triptych/Spotlight.jpg">
+                        <img src="img/Triptych/Spotlight.jpg">
+                    </a>
+                </div>
             </div>
         </section>
         <section class="window images" style="background-image: url('img/Triptych/Outdoorlight-double(triple)exposure.jpg')">
             <aside>Multiple Exposures</aside>
         </section>
     </div>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript">
+    // var gallNum = 0;
+    $(document).load(function() {
+        $("body").fadeIn(500);
+    });
+    $(document).mousemove(function(event) {
+        $("body").fadeIn(500);
+    });
+    $(document).ready(function() {
+        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
+        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'triptych.css'));
 
+        // $("a.venobox").click(function(event) {
+
+        //     $(this).parent.attr('data-large', '1').siblings().attr('data-large', '0');;
+        //     event.preventDefault();
+        //     gallNum = $(this).attr('data-order');
+        //     $("a.venobox").parent().siblings().css('width', '100%').attr('data-large', 'true');
+        //     $("a.venobox[data-order=" + gallNum + "]").parent().siblings().css('width', '0').attr('data-large', 'false');
+        // });
+        // $("a.venobox[data-order=" + gallNum + "]").click(function(event) {
+        //     gallNum = 0;
+        //     $(this).parent().css('width', 'initial');
+        // });
+
+
+
+        $(".main").onepage_scroll({
+            sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
+            easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
+            // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+            animationTime: 1000, // AnimationTime let you define how long each section takes to animate
+            pagination: true, // You can either show or hide the pagination. Toggle true for show, false for hide.
+            updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scrolls to each page.
+            beforeMove: function(index) {
+                $("#scroll-down").css({
+                    'opacity': '0',
+                    'bottom': '-12vmin',
+                    'visibility': 'hidden'
+                });
+            }, // This option accepts a callback function. The function will be called before the page moves.
+            afterMove: function(index) {}, // This option accepts a callback function. The function will be called after the page moves.
+            loop: false, // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+            keyboard: true, // You can activate the keyboard controls
+            responsiveFallback: false // You can fallback to normal page scroll by defining the width of the browser in which
+            // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
+            // the browser's width is less than 600, the fallback will kick in.
+        });
+
+        $("a.trans").click(function(event) {
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").fadeOut(500, redirectPage);
+        });
+
+        function redirectPage() {
+            window.location = linkLocation;
+        }
+    });
+
+    var e = document.getElementById("fullscreen");
+
+    e.onclick = function() {
+
+        if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
+            RunPrefixMethod(document, "CancelFullScreen");
+        } else {
+            RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
+        }
+
+    }
+
+    var pfx = ["webkit", "moz", "ms", "o", ""];
+
+    function RunPrefixMethod(obj, method) {
+
+        var p = 0,
+            m, t;
+        while (p < pfx.length && !obj[m]) {
+            m = method;
+            if (pfx[p] == "") {
+                m = m.substr(0, 1).toLowerCase() + m.substr(1);
+            }
+            m = pfx[p] + m;
+            t = typeof obj[m];
+            if (t != "undefined") {
+                pfx = [pfx[p]];
+                return (t == "function" ? obj[m]() : obj[m]);
+            }
+            p++;
+        }
+
+    }
+    </script>
 </body>
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
-<script type="text/javascript">
-var gallNum = 0;
-$(document).load(function() {
-    $("body").fadeIn(500);
-});
-$(document).mousemove(function(event) {
-    $("body").fadeIn(500);
-});
-$(document).ready(function() {
-    $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
 
-    $("a.venobox").click(function(event) {
-        event.preventDefault();
-        gallNum = $(this).attr('data-order');
-        $("a.venobox").removeClass('active');
-        $("a.venobox[data-order=" + gallNum + "]").addClass('active');
-    });
-
-    $(".main").onepage_scroll({
-        sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
-        easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
-        // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-        animationTime: 1000, // AnimationTime let you define how long each section takes to animate
-        pagination: true, // You can either show or hide the pagination. Toggle true for show, false for hide.
-        updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scrolls to each page.
-        beforeMove: function(index) {
-            $("#scroll-down").css({
-                'opacity': '0',
-                'bottom': '-12vmin',
-                'visibility': 'hidden'
-            });
-        }, // This option accepts a callback function. The function will be called before the page moves.
-        afterMove: function(index) {}, // This option accepts a callback function. The function will be called after the page moves.
-        loop: false, // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-        keyboard: true, // You can activate the keyboard controls
-        responsiveFallback: false // You can fallback to normal page scroll by defining the width of the browser in which
-        // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
-        // the browser's width is less than 600, the fallback will kick in.
-    });
-
-    $("a.trans").click(function(event) {
-        event.preventDefault();
-        linkLocation = this.href;
-        $("body").fadeOut(500, redirectPage);
-    });
-
-    function redirectPage() {
-        window.location = linkLocation;
-    }
-});
-
-var e = document.getElementById("fullscreen");
-
-e.onclick = function() {
-
-    if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
-        RunPrefixMethod(document, "CancelFullScreen");
-    } else {
-        RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
-    }
-
-}
-
-var pfx = ["webkit", "moz", "ms", "o", ""];
-
-function RunPrefixMethod(obj, method) {
-
-    var p = 0,
-        m, t;
-    while (p < pfx.length && !obj[m]) {
-        m = method;
-        if (pfx[p] == "") {
-            m = m.substr(0, 1).toLowerCase() + m.substr(1);
-        }
-        m = pfx[p] + m;
-        t = typeof obj[m];
-        if (t != "undefined") {
-            pfx = [pfx[p]];
-            return (t == "function" ? obj[m]() : obj[m]);
-        }
-        p++;
-    }
-
-}
-</script>
 
 </html>
