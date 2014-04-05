@@ -16,6 +16,10 @@ h1 {
     float:left;
 }
 
-.window div .image {
-	/*width:auto;*/
+@media all and (max-aspect-ratio: 2/1) {
+	.triptych div {
+		width: 100%;
+		height: 33.3%;
+		text-align: center;
+	}
 }
