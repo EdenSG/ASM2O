@@ -7,6 +7,14 @@ h1 {
     height: auto;
     max-height: 100%;
     max-width: 100%;
+    -webkit-transition:all 0.35s ease;
+    transition:all 0.35s ease;
+    z-index: 6;
+    position: relative;
+}
+.triptych div img:hover {
+	box-shadow: 0 0 0 4px rgba(150,150,150,0.7);
+	z-index: 10;
 }
 .triptych div {
     -webkit-transition:all 0.35s ease;
