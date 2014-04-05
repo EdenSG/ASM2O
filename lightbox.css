@@ -1,6 +1,6 @@
 /* Preload images */
  body:after {
-    content: url(img/loading.gif);
+    content: url(img/rotator2.png);
     display: none;
 }
 .lightboxOverlay {
@@ -57,10 +57,22 @@
 }
 .lb-cancel {
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 128px;
+    height: 128px;
     margin: 0 auto;
-    background: url(img/loading.gif) no-repeat;
+    background: url(img/rotator2.png) no-repeat;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+	100% {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+
+@keyframes spin {
+	0% {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+	100% {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
 }
 .lb-nav {
     position: absolute;

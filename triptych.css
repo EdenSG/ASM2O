@@ -15,3 +15,7 @@ h1 {
     width: 33.3%;
     float:left;
 }
+
+.window div .image {
+	/*width:auto;*/
+}
