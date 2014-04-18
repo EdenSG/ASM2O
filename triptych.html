@@ -94,6 +94,12 @@
     </a>
     <div class="main">
         <section class="window">
+            <a id="menu">Menu</a>
+            <nav>
+                <a class="side-nav" href="index.html">Elements &amp; Principles</a>
+                <a class="side-nav" href="filters.html">Filters</a>
+                <a class="side-nav">Triptych</a>
+            </nav>
             <div class="begin">
                 <h1>Eden S.-G.</h1>
                 <div style="display: flex; text-align: center; flex-direction: row; justify-content: space-around; width: 100vw;">
@@ -141,47 +147,34 @@
         $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
         $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'triptych.css'));
 
-        // $("a.venobox").click(function(event) {
-
-        //     $(this).parent.attr('data-large', '1').siblings().attr('data-large', '0');;
-        //     event.preventDefault();
-        //     gallNum = $(this).attr('data-order');
-        //     $("a.venobox").parent().siblings().css('width', '100%').attr('data-large', 'true');
-        //     $("a.venobox[data-order=" + gallNum + "]").parent().siblings().css('width', '0').attr('data-large', 'false');
-        // });
-        // $("a.venobox[data-order=" + gallNum + "]").click(function(event) {
-        //     gallNum = 0;
-        //     $(this).parent().css('width', 'initial');
-        // });
-
-
-
         $(".main").onepage_scroll({
-            sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
-            easing: "ease", // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in", 
-            // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-            animationTime: 1000, // AnimationTime let you define how long each section takes to animate
-            pagination: true, // You can either show or hide the pagination. Toggle true for show, false for hide.
-            updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scrolls to each page.
+            sectionContainer: "section",
+            animationTime: 1000,
+            pagination: true,
+            updateURL: false,
             beforeMove: function(index) {
                 $("#scroll-down").css({
                     'opacity': '0',
                     'bottom': '-12vmin',
                     'visibility': 'hidden'
                 });
-            }, // This option accepts a callback function. The function will be called before the page moves.
-            afterMove: function(index) {}, // This option accepts a callback function. The function will be called after the page moves.
-            loop: false, // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-            keyboard: true, // You can activate the keyboard controls
-            responsiveFallback: false // You can fallback to normal page scroll by defining the width of the browser in which
-            // you want the responsive fallback to be triggered. For example, set this to 600 and whenever 
-            // the browser's width is less than 600, the fallback will kick in.
+            },
+            afterMove: function(index) {},
+            loop: false,
+            keyboard: true,
+            responsiveFallback: false
         });
 
         $("a.trans").click(function(event) {
             event.preventDefault();
             linkLocation = this.href;
             $("body").fadeOut(500, redirectPage);
+        });
+        $("a#menu").mouseover(function() {
+            $("nav").addClass('shown');
+        });
+        $("nav").mouseleave(function(event) {
+            $(this).removeClass('shown');
         });
 
         function redirectPage() {

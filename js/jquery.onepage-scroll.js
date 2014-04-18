@@ -267,8 +267,8 @@
     // Create Pagination and Display Them
     if(settings.pagination == true) {
       $("<ul class='onepage-pagination'>" + paginationList + "</ul>").prependTo("body");
-      posTop = (el.find(".onepage-pagination").height() / 2) * -1;
-      el.find(".onepage-pagination").css("margin-top", posTop);
+      //posTop = (el.find(".onepage-pagination").height() / 2) * -1;
+      //el.find(".onepage-pagination").css("margin-top", posTop);
     }
     
     if(window.location.hash != "" && window.location.hash != "#1") {
