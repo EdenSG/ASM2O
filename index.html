@@ -4,7 +4,8 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <title>Elements &amp; Principles</title>
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
+    <link async="true" href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/pace.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/apple-touch-icon-57x57.png" />
@@ -95,9 +96,14 @@
         <section class="window" style="overflow-x:hidden">
             <a id="menu">Menu</a>
             <nav>
-                <a class="side-nav">Elements &amp; Principles</a><br/>
-                <a class="side-nav" href="filters.html">Filters</a><br/>
-                <a class="side-nav" href="triptych.html">Triptych</a><br/>
+                <a class="side-nav">Elements &amp; Principles</a>
+                <br/>
+                <a class="side-nav link" href="filters.html">Filters</a>
+                <br/>
+                <a class="side-nav link" href="triptych.html">Triptych</a>
+                <br/>
+                <a class="side-nav link" href="typography.html">Typography</a>
+                <br/>
             </nav>
             <a id="fullscreen">Fullscreen</a>
             <div class="begin">
@@ -111,134 +117,135 @@
                 </div>
             </div>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Balance.jpeg')">
+        <section class="window images" style="background-image: url('img/EP/Balance.jpeg');">
             <aside>Balance</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Colour.jpeg')">
+        <section class="window images" data-background="url('img/EP/Colour.jpeg')">
             <aside>Colour</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Emphasis.JPG')">
+        <section class="window images" data-background="url('img/EP/Emphasis.JPG')">
             <aside>Emphasis</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Form.jpeg')">
+        <section class="window images" data-background="url('img/EP/Form.jpeg')">
             <aside>Form</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Line.jpeg')">
+        <section class="window images" data-background="url('img/EP/Line.jpeg')">
             <aside>Line</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Pattern.jpeg')">
+        <section class="window images" data-background="url('img/EP/Pattern.jpeg')">
             <aside>Pattern</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Proportion.JPG')">
+        <section class="window images" data-background="url('img/EP/Proportion.JPG')">
             <aside>Proportion</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Rhythm (Movement).JPG')">
+        <section class="window images" data-background="url('img/EP/Rhythm (Movement).JPG')">
             <aside>Rhythm &amp; Movement</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Shape.jpeg')">
+        <section class="window images" data-background="url('img/EP/Shape.jpeg')">
             <aside>Shape</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Space.jpg')">
+        <section class="window images" data-background="url('img/EP/Space.jpg')">
             <aside>Space</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Texture.jpeg')">
+        <section class="window images" data-background="url('img/EP/Texture.jpeg')">
             <aside>Texture</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Unity.jpeg')">
+        <section class="window images" data-background="url('img/EP/Unity.jpeg')">
             <aside>Unity &amp; Harmony</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Value.jpeg')">
+        <section class="window images" data-background="url('img/EP/Value.jpeg')">
             <aside>Value</aside>
         </section>
-        <section class="window images" style="background-image: url('img/EP/Variety.jpeg')">
+        <section class="window images" data-background="url('img/EP/Variety.jpeg')">
             <aside>Variety</aside>
         </section>
-        <!-- <section class="window">
-            <div>
-                <span id="more">See more at <a class="trans" href="https://edensg.github.io/" target="_BLANK">edensg.github.io</a>.</span>
-            </div>
-        </section> -->
     </div>
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <script type="text/javascript" src="js/jquery.velocity.min.js"></script>
+    <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+
+    <script type="text/javascript">
+    $(document).load(function() {
+        $("body").show();
+    });
+    $(document).mousemove(function(event) {
+        $("body").show();
+    });
+    $(document).ready(function() {
+        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
+
+
+        $(".main").onepage_scroll({
+            sectionContainer: "section",
+            animationTime: 1000,
+            pagination: true,
+            updateURL: false,
+            beforeMove: function(index) {
+                $("#scroll-down").css({
+                    'opacity': '0',
+                    'bottom': '-12vmin',
+                    'visibility': 'hidden'
+                });
+                $('.window.images').eq(index - 1).css('background-image', $('.window.images').eq(index - 1).attr('data-background'));
+                $('.window.images').eq(index).css('background-image', $('.window.images').eq(index).attr('data-background'));
+                $('.window.images').eq(index + 1).css('background-image', $('.window.images').eq(index).attr('data-background'));
+
+            },
+            afterMove: function(index) {},
+            loop: false,
+            keyboard: true,
+            responsiveFallback: 500
+        });
+        $("a.trans").click(function(event) {
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").css('opacity', '0', redirectPage);
+        });
+        $("a#menu").mouseover(function() {
+            $("nav").addClass('shown');
+        });
+        $("nav").mouseleave(function(event) {
+            $(this).removeClass('shown');
+        });
+
+        function redirectPage() {
+            window.location = linkLocation;
+        }
+    });
+    var e = document.getElementById("fullscreen");
+
+    e.onclick = function() {
+
+        if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
+            RunPrefixMethod(document, "CancelFullScreen");
+        } else {
+            RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
+        }
+
+    }
+
+    var pfx = ["webkit", "moz", "ms", "o", ""];
+
+    function RunPrefixMethod(obj, method) {
+
+        var p = 0,
+            m, t;
+        while (p < pfx.length && !obj[m]) {
+            m = method;
+            if (pfx[p] == "") {
+                m = m.substr(0, 1).toLowerCase() + m.substr(1);
+            }
+            m = pfx[p] + m;
+            t = typeof obj[m];
+            if (t != "undefined") {
+                pfx = [pfx[p]];
+                return (t == "function" ? obj[m]() : obj[m]);
+            }
+            p++;
+        }
+
+    }
+    </script>
 </body>
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
-<script type="text/javascript">
-$(document).load(function() {
-    $("body").fadeIn(500);
-});
-$(document).mousemove(function(event) {
-    $("body").fadeIn(500);
-});
-$(document).ready(function() {
-    $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
 
-    $(".main").onepage_scroll({
-        sectionContainer: "section",
-        animationTime: 1000,
-        pagination: true,
-        updateURL: false,
-        beforeMove: function(index) {
-            $("#scroll-down").css({
-                'opacity': '0',
-                'bottom': '-12vmin',
-                'visibility': 'hidden'
-            });
-        },
-        afterMove: function(index) {},
-        loop: false,
-        keyboard: true,
-        responsiveFallback: 500
-    });
-    $("a.trans").click(function(event) {
-        event.preventDefault();
-        linkLocation = this.href;
-        $("body").fadeOut(500, redirectPage);
-    });
-    $("a#menu").mouseover(function() {
-        $("nav").addClass('shown');
-    });
-    $("nav").mouseleave(function(event) {
-        $(this).removeClass('shown');
-    });
-
-    function redirectPage() {
-        window.location = linkLocation;
-    }
-});
-var e = document.getElementById("fullscreen");
-
-e.onclick = function() {
-
-    if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
-        RunPrefixMethod(document, "CancelFullScreen");
-    } else {
-        RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
-    }
-
-}
-
-var pfx = ["webkit", "moz", "ms", "o", ""];
-
-function RunPrefixMethod(obj, method) {
-
-    var p = 0,
-        m, t;
-    while (p < pfx.length && !obj[m]) {
-        m = method;
-        if (pfx[p] == "") {
-            m = m.substr(0, 1).toLowerCase() + m.substr(1);
-        }
-        m = pfx[p] + m;
-        t = typeof obj[m];
-        if (t != "undefined") {
-            pfx = [pfx[p]];
-            return (t == "function" ? obj[m]() : obj[m]);
-        }
-        p++;
-    }
-
-}
-</script>
 
 </html>
