@@ -191,6 +191,7 @@ h4.nav a:hover {
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
+    background-image: url('img/Preloader_2.gif');
     z-index: 2;
 }
 h1 {
