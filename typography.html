@@ -5,23 +5,23 @@
     <title>Typography</title>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="typography.css" />
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-16x16.png" sizes="16x16" />
     <meta name="application-name" content="Eden S.-G." />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/mstile-144x144.png" />
+    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/img/mstile-144x144.png" />
 </head>
 
-<body id="skrollr-body" style="height:7000px;background:url('img/crossword.png')">
-    <h2 id="scroll-down" data-200="bottom[quadratic]:10%;opacity:1" data-600="bottom[quadratic]:-1%;opacity:0">&gt;</h2>
+<body style="background:url('img/crossword.png')">
+    <h2 id="scroll-down" data--10="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-600="transform:translate(0,10%) rotate(90deg);opacity:0">&gt;</h2>
 
-    <div class="full-width header" data-100="top[quadratic]:0%;opacity:1" data-500="top:-10%;opacity:0">
+    <div class="full-width header" data-0="transform[quadratic]:translate(0,0%);opacity:1" data-500="transform[quadratic]:translate(0,-10%);opacity:0">
         <h1>Eden S.-G.</h1>
         <h3>Typography</h3>
     </div>
@@ -48,12 +48,7 @@
     <script type="text/javascript" src="js/skrollr.menu.min.js"></script>
     <script type="text/javascript">
     skrollr.init({
-        forceHeight: false,
-        easing: {
-            sin: function(p) {
-                return (Math.sin(p * Math.PI * 2 - Math.PI / 2) + 1) / 2;
-            },
-        }
+        forceHeight: true
 
 
     });
