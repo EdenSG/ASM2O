@@ -165,8 +165,6 @@ h4.nav a:hover {
     font-size:3rem;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    -webkit-transition:all 2s ease;
-    transition:all 2s ease;
     -webkit-animation:scrolldown 3s linear infinite;
     animation:scrolldown 3s linear infinite;
 }
@@ -193,6 +191,10 @@ h4.nav a:hover {
     background-repeat: no-repeat;
     background-image: url('img/Preloader_2.gif');
     z-index: 2;
+}
+.images::before {
+    background-image: url('img/Preloader_2.gif');
+    width:100%;
 }
 h1 {
     -moz-box-sizing: border-box;

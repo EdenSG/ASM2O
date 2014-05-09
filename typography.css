@@ -1,0 +1,82 @@
+/* YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) - http://cssreset.com */
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+/************/
+@font-face{font-family:Quicksand;font-style:normal;font-weight:300;src:local('Quicksand Light'),local('Quicksand-Light'),url(https://themes.googleusercontent.com/static/fonts/quicksand/v3/qhfoJiLu10kFjChCCTvGlKRDOzjiPcYnFooOUGCOsRk.woff) format('woff')}@font-face{font-family:Quicksand;font-style:normal;font-weight:400;src:local('Quicksand Regular'),local('Quicksand-Regular'),url(https://themes.googleusercontent.com/static/fonts/quicksand/v3/sKd0EMYPAh5PYCRKSryvW7O3LdcAZYWl9Si6vvxL-qU.woff) format('woff')}
+
+html, body {
+    font-family:'Quicksand';
+    font-size:3vmin;
+}
+.header {
+    position:fixed;
+    margin:200px auto;
+    width: 100%;
+    text-align: center;
+}
+.header h1 {
+    font-size: 4rem;
+    font-weight: 100;
+}
+.header h3 {
+    font-size: 2rem;
+}
+.fixed {
+    position: fixed;
+}
+.full-width {
+    width: 100%;
+    height:100vh;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 0 100px #fff;
+}
+h4 {
+    position: fixed;
+    right:3%;
+    display: inline-block;
+    padding:3%;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    font-size: 0.7rem;
+    font-weight: 400;
+    border-radius: 0.3rem;
+}
+#scroll-down {
+    position:fixed;
+    width:100%;
+    text-align:center;
+    color:rgba(0, 0, 0, 0.5);
+    font-weight: 100;
+    z-index:2;
+    font-size:3rem;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-animation:scrolldown 3s linear infinite;
+    animation:scrolldown 3s linear infinite;
+}
+@-webkit-keyframes scrolldown {
+    0% {
+        text-shadow: 0vmin 0 0 #999
+    }
+    100% {
+        text-shadow: 12vmin 0 0 transparent
+    }
+}
+@keyframes scrolldown {
+    0% {
+        text-shadow: 0vmin 0 0 #999
+    }
+    100% {
+        text-shadow: 12vmin 0 0 transparent
+    }
+}
+@media (max-width:600px), (max-height:400px) {
+    html, body {
+        font-size:15px;
+    }
+    h4 {
+    	font-size: 1rem;
+    }
+}

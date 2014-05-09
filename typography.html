@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Typography</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="typography.css" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Eden S.-G." />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/mstile-144x144.png" />
+</head>
+
+<body id="skrollr-body" style="height:7000px;background:url('img/crossword.png')">
+    <h2 id="scroll-down" data-200="bottom[quadratic]:10%;opacity:1" data-600="bottom[quadratic]:-1%;opacity:0">&gt;</h2>
+
+    <div class="full-width header" data-100="top[quadratic]:0%;opacity:1" data-500="top:-10%;opacity:0">
+        <h1>Eden S.-G.</h1>
+        <h3>Typography</h3>
+    </div>
+    <div class="full-width fixed" data-600="opacity:0;left[sqrt]:-2%" data-800="opacity:1;left:0%" data-2000="opacity:1;left[quadratic]:2%" data-2200="opacity:0;left:5%">
+        <img src="img/Typography/cory1.jpg">
+    </div>
+    <h4 data-700="top:100%;right[quadratic]:5%;" data-1900="top:-100%;right:50%;">Cory Doctorow, Variation 1</h4>
+
+
+    <div class="full-width fixed" data-2000="opacity:0;left[sqrt]:-2%" data-2200="opacity:1;left:0%" data-3400="opacity:1;left[quadratic]:2%" data-3600="opacity:0;left:5%">
+        <img src="img/Typography/cory2.jpg">
+    </div>
+    <h4 data-2100="top:100%;right[quadratic]:5%;" data-3300="top:-100%;right:50%;">Cory Doctorow, Variation 2</h4>
+
+
+    <div class="full-width fixed" data-3400="opacity:0;left[sqrt]:-2%" data-3600="opacity:1;left:0%" data-4900="opacity:1;left[quadratic]:2%" data-5000="opacity:0;left:5%">
+        <img src="img/Typography/cory3.jpg">
+    </div>
+    <h4 data-3500="top:100%;right[quadratic]:5%;" data-4700="top:-100%;right:50%;">Cory Doctorow, Variation 3</h4>
+
+
+
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script type="text/javascript" src="js/skrollr.menu.min.js"></script>
+    <script type="text/javascript">
+    skrollr.init({
+        forceHeight: false,
+        easing: {
+            sin: function(p) {
+                return (Math.sin(p * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+            },
+        }
+
+
+    });
+    </script>
+</body>
+
+</html>
