@@ -189,12 +189,8 @@ h4.nav a:hover {
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('img/Preloader_2.gif');
+    background-image: none, url('img/Chromiumthrobber.svg');
     z-index: 2;
-}
-.images::before {
-    background-image: url('img/Preloader_2.gif');
-    width:100%;
 }
 h1 {
     -moz-box-sizing: border-box;

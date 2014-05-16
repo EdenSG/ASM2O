@@ -88,7 +88,7 @@
     </style>
 </head>
 
-<body id="main">
+<body id="main" style="opacity:0">
     <a href="#2" onclick="$('.main').moveDown();">
         <h2 id="scroll-down">&gt;</h2>
     </a>
@@ -151,6 +151,7 @@
     });
     $(document).ready(function() {
         $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
+        $('body').css('opacity', '1');
 
 
         $(".main").onepage_scroll({
@@ -177,7 +178,10 @@
         $("a.trans").click(function(event) {
             event.preventDefault();
             linkLocation = this.href;
-            $("body").css('opacity', '0', redirectPage);
+            $("body").css('opacity', '0');
+            setTimeout(function() {
+                redirectPage();
+            }, 1100);
         });
         $("a#menu").mouseover(function() {
             $("nav").addClass('shown');
@@ -185,11 +189,12 @@
         $("nav").mouseleave(function(event) {
             $(this).removeClass('shown');
         });
-
-        function redirectPage() {
-            window.location = linkLocation;
-        }
     });
+
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+
     var e = document.getElementById("fullscreen");
 
     e.onclick = function() {

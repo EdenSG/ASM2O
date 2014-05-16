@@ -88,7 +88,7 @@
     </style>
 </head>
 
-<body id="main">
+<body id="main" style="opacity:0">
     <a href="#2" onclick="$('.main').moveDown();">
         <h2 id="scroll-down">&gt;</h2>
     </a>
@@ -96,9 +96,12 @@
         <section class="window" style="overflow-x:hidden">
             <a id="menu">Menu</a>
             <nav>
-                <a class="side-nav link" href="index.html">Elements &amp; Principles</a><br/>
-                <a class="side-nav link" href="filters.html">Filters</a><br/>
-                <a class="side-nav">Triptych</a><br/>
+                <a class="side-nav link" href="index.html">Elements &amp; Principles</a>
+                <br/>
+                <a class="side-nav link" href="filters.html">Filters</a>
+                <br/>
+                <a class="side-nav">Triptych</a>
+                <br/>
                 <a class="side-nav link" href="typography.html">Typography</a>
                 <br/>
             </nav>
@@ -148,6 +151,7 @@
     $(document).ready(function() {
         $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
         $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'triptych.css'));
+        $('body').css('opacity', '1');
 
         $(".main").onepage_scroll({
             sectionContainer: "section",
@@ -170,7 +174,10 @@
         $("a.trans").click(function(event) {
             event.preventDefault();
             linkLocation = this.href;
-            $("body").fadeOut(500, redirectPage);
+            $("body").css('opacity', '0');
+            setTimeout(function() {
+                redirectPage();
+            }, 1100);
         });
         $("a#menu").mouseover(function() {
             $("nav").addClass('shown');
@@ -179,43 +186,10 @@
             $(this).removeClass('shown');
         });
 
-        function redirectPage() {
-            window.location = linkLocation;
-        }
     });
 
-    var e = document.getElementById("fullscreen");
-
-    e.onclick = function() {
-
-        if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
-            RunPrefixMethod(document, "CancelFullScreen");
-        } else {
-            RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
-        }
-
-    }
-
-    var pfx = ["webkit", "moz", "ms", "o", ""];
-
-    function RunPrefixMethod(obj, method) {
-
-        var p = 0,
-            m, t;
-        while (p < pfx.length && !obj[m]) {
-            m = method;
-            if (pfx[p] == "") {
-                m = m.substr(0, 1).toLowerCase() + m.substr(1);
-            }
-            m = pfx[p] + m;
-            t = typeof obj[m];
-            if (t != "undefined") {
-                pfx = [pfx[p]];
-                return (t == "function" ? obj[m]() : obj[m]);
-            }
-            p++;
-        }
-
+    function redirectPage() {
+        window.location = linkLocation;
     }
     </script>
 </body>
