@@ -2,6 +2,11 @@
 <html>
 
 <head>
+    <script language="javascript">
+    if (document.location.protocol != "https:" && document.location.hostname != "localhost") {
+        document.location.href = "https://edensg.github.io" + document.location.pathname;
+    };
+    </script>
     <title>Typography</title>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="typography.css" />
@@ -18,7 +23,7 @@
     <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/img/mstile-144x144.png" />
 </head>
 
-<body style="background:url('img/crossword.png')">
+<body style="background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALklEQVQIW2N89+7dfwYgEBISYgTRMADmYJOEq0KXRNGOLIkigWwsI0gVusUgMQBVzxuZidEM8gAAAABJRU5ErkJggg==);">
     <a id="menu">Menu</a>
     <nav>
         <a class="side-nav link" href="index.html">Elements &amp; Principles</a>
@@ -30,9 +35,9 @@
         <a class="side-nav">Typography</a>
         <br/>
     </nav>
-    <h2 id="scroll-down" data--1p="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-60p="transform:translate(0,10%) rotate(90deg);opacity:0">&gt;</h2>
+    <h2 href id="scroll-down" data--1p="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-60p="transform:translate(0,10%) rotate(90deg);opacity:0" onclick="ScrollDown();">&gt;</h2>
 
-    <div class="full-width header" data-0="transform[quadratic]:translate(0,0%);opacity:1" data-50p="transform[quadratic]:translate(0,-10%);opacity:0">
+    <div class="full-width header fixed" data-0="transform[quadratic]:translate(0,0%);opacity:1" data-50p="transform[quadratic]:translate(0,-10%);opacity:0">
         <h1>Eden S.-G.</h1>
         <h3>Typography</h3>
     </div>
@@ -60,16 +65,29 @@
     };
     </script>
     <script type="text/javascript" src="js/skrollr.min.js"></script>
-    <script type="text/javascript" src="js/skrollr.menu.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
     skrollr.init();
-    $("a#menu").mouseover(function() {
-        $("nav").addClass('shown');
+    $(document).ready(function() {
+        $('body').animate({
+            scrollTop: '1px'
+        }, 100);
+        $('.fixed').css('position', 'fixed');
+        $("a#menu").mouseover(function() {
+            $(this).css('opacity', '0');
+            $("nav").addClass('shown');
+        });
+        $("nav").mouseleave(function(event) {
+            $(this).removeClass('shown');
+            $("a#menu").css('opacity', '1');
+        });
     });
-    $("nav").mouseleave(function(event) {
-        $(this).removeClass('shown');
-    });
+
+    function ScrollDown() {
+        $('body').animate({
+            scrollTop: $(window).height() * 1.1
+        }, 1000)
+    }
     </script>
 </body>
 
