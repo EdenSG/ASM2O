@@ -105,6 +105,8 @@
                 <br/>
                 <a class="side-nav link" href="typography.html">Typography</a>
                 <br/>
+                <hr/>
+                <?php if (!empty($_SERVER[ 'HTTPS']) &amp;&amp; $_SERVER[ 'HTTPS']=='off' ) { echo( "<br/><h2>This site is insecure.</h2><a class='side-nav link' href='https://edensg.github.io/typography/'>View encrypted version of this site</a><br/>OR<br/><br/><a class='side-nav link' href='https://www.eff.org/https-everywhere'>Get HTTPS Everywhere to bypass this warning.</a>
             </nav>
             <a id="fullscreen">Fullscreen</a>
             <div class="begin">
@@ -172,7 +174,7 @@
         $("body").show();
     });
     $(document).ready(function() {
-        $('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
+        $('head').append($('<link async rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
         $('body').css('opacity', '1');
 
 
