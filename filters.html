@@ -3,7 +3,7 @@
 
 <head>
     <script language="javascript">
-    if (document.location.protocol != "https:") {
+    if (document.location.protocol != "https:" && document.location.hostname != "localhost") {
         document.location.href = "https://edensg.github.io" + document.location.pathname;
     };
     </script>
