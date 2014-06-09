@@ -1,6 +1,5 @@
 /*
-	By Osvaldas Valutis, www.osvaldas.info
-	Available for use under the MIT License
+	AUTHOR: Osvaldas Valutis, www.osvaldas.info
 */
 
 
@@ -14,9 +13,7 @@
 		eCancel		  = isTouch ? 'touchcancel'	: 'mouseup',
 		secondsToTime = function( secs )
 		{
-			var hoursDiv = secs / 3600, hours = Math.floor( hoursDiv ), minutesDiv = secs % 3600 / 60, minutes = Math.floor( minutesDiv ), seconds = Math.ceil( secs % 3600 % 60 );
-			if( seconds > 59 ) { seconds = 0; minutes = Math.ceil( minutesDiv ); }
-			if( minutes > 59 ) { minutes = 0; hours = Math.ceil( hoursDiv ); }
+			var hours = Math.floor( secs / 3600 ), minutes = Math.floor( secs % 3600 / 60 ), seconds = Math.ceil( secs % 3600 % 60 );
 			return ( hours == 0 ? '' : hours > 0 && hours.toString().length < 2 ? '0'+hours+':' : hours+':' ) + ( minutes.toString().length < 2 ? '0'+minutes : minutes ) + ':' + ( seconds.toString().length < 2 ? '0'+seconds : seconds );
 		},
 		canPlayType	  = function( file )
@@ -33,7 +30,6 @@
 			{
 				playPause:	 	'playpause',
 				playing:		'playing',
-				stopped:		'stopped',
 				time:		 	'time',
 				timeCurrent:	'time-current',
 				timeDuration: 	'time-duration',
@@ -44,7 +40,7 @@
 				volumeButton: 	'volume-button',
 				volumeAdjust: 	'volume-adjust',
 				noVolume: 		'novolume',
-				muted: 			'muted',
+				mute: 			'mute',
 				mini: 			'mini'
 			};
 
@@ -102,47 +98,43 @@
 						theRealEvent	= isTouch ? e.originalEvent.touches[ 0 ] : e;
 						theAudio.volume = Math.abs( ( theRealEvent.pageY - ( volumeAdjuster.offset().top + volumeAdjuster.height() ) ) / volumeAdjuster.height() );
 					},
-					updateLoadBar = function()
+					updateLoadBar = setInterval( function()
 					{
-						var interval = setInterval( function()
-						{
-							if( theAudio.buffered.length < 1 ) return true;
-							barLoaded.width( ( theAudio.buffered.end( 0 ) / theAudio.duration ) * 100 + '%' );
-							if( Math.floor( theAudio.buffered.end( 0 ) ) >= Math.floor( theAudio.duration ) ) clearInterval( interval );
-						}, 100 );
-					};
+						barLoaded.width( ( theAudio.buffered.end( 0 ) / theAudio.duration ) * 100 + '%' );
+						if( theAudio.buffered.end( 0 ) >= theAudio.duration )
+							clearInterval( updateLoadBar );
+					}, 100 );
 
 				var volumeTestDefault = theAudio.volume, volumeTestValue = theAudio.volume = 0.111;
 				if( Math.round( theAudio.volume * 1000 ) / 1000 == volumeTestValue ) theAudio.volume = volumeTestDefault;
 				else thePlayer.addClass( cssClass.noVolume );
 
 				timeDuration.html( '&hellip;' );
-				timeCurrent.html( secondsToTime( 0 ) );
+				timeCurrent.text( secondsToTime( 0 ) );
 
 				theAudio.addEventListener( 'loadeddata', function()
 				{
-					updateLoadBar();
-					timeDuration.html( $.isNumeric( theAudio.duration ) ? secondsToTime( theAudio.duration ) : '&hellip;' );
+					timeDuration.text( secondsToTime( theAudio.duration ) );
 					volumeAdjuster.find( 'div' ).height( theAudio.volume * 100 + '%' );
 					volumeDefault = theAudio.volume;
 				});
 
 				theAudio.addEventListener( 'timeupdate', function()
 				{
-					timeCurrent.html( secondsToTime( theAudio.currentTime ) );
+					timeCurrent.text( secondsToTime( theAudio.currentTime ) );
 					barPlayed.width( ( theAudio.currentTime / theAudio.duration ) * 100 + '%' );
 				});
 
 				theAudio.addEventListener( 'volumechange', function()
 				{
 					volumeAdjuster.find( 'div' ).height( theAudio.volume * 100 + '%' );
-					if( theAudio.volume > 0 && thePlayer.hasClass( cssClass.muted ) ) thePlayer.removeClass( cssClass.muted );
-					if( theAudio.volume <= 0 && !thePlayer.hasClass( cssClass.muted ) ) thePlayer.addClass( cssClass.muted );
+					if( theAudio.volume > 0 && thePlayer.hasClass( cssClass.mute ) ) thePlayer.removeClass( cssClass.mute );
+					if( theAudio.volume <= 0 && !thePlayer.hasClass( cssClass.mute ) ) thePlayer.addClass( cssClass.mute );
 				});
 
 				theAudio.addEventListener( 'ended', function()
 				{
-					thePlayer.removeClass( cssClass.playing ).addClass( cssClass.stopped );
+					thePlayer.removeClass( cssClass.playing );
 				});
 
 				theBar.on( eStart, function( e )
@@ -157,14 +149,14 @@
 
 				volumeButton.on( 'click', function()
 				{
-					if( thePlayer.hasClass( cssClass.muted ) )
+					if( thePlayer.hasClass( cssClass.mute ) )
 					{
-						thePlayer.removeClass( cssClass.muted );
+						thePlayer.removeClass( cssClass.mute );
 						theAudio.volume = volumeDefault;
 					}
 					else
 					{
-						thePlayer.addClass( cssClass.muted );
+						thePlayer.addClass( cssClass.mute );
 						volumeDefault = theAudio.volume;
 						theAudio.volume = 0;
 					}
@@ -183,20 +175,20 @@
 			}
 			else thePlayer.addClass( cssClass.mini );
 
-			thePlayer.addClass( isAutoPlay ? cssClass.playing : cssClass.stopped );
+			if( isAutoPlay ) thePlayer.addClass( cssClass.playing );
 
 			thePlayer.find( '.' + cssClass.playPause ).on( 'click', function()
 			{
 				if( thePlayer.hasClass( cssClass.playing ) )
 				{
 					$( this ).attr( 'title', params.strPlay ).find( 'a' ).html( params.strPlay );
-					thePlayer.removeClass( cssClass.playing ).addClass( cssClass.stopped );
+					thePlayer.removeClass( cssClass.playing );
 					isSupport ? theAudio.pause() : theAudio.Stop();
 				}
 				else
 				{
 					$( this ).attr( 'title', params.strPause ).find( 'a' ).html( params.strPause );
-					thePlayer.addClass( cssClass.playing ).removeClass( cssClass.stopped );
+					thePlayer.addClass( cssClass.playing );
 					isSupport ? theAudio.play() : theAudio.Play();
 				}
 				return false;

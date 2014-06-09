@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html style="background:#fff">
+
+<head>
+    <script language="javascript">
+    if (document.location.protocol != "https:" && document.location.hostname != "localhost") {
+        document.location.href = "https://edensg.github.io" + document.location.pathname;
+    };
+    </script>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <title>Soundscape</title>
+    <link async="true" href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/pace.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Eden S.-G." />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/img/mstile-144x144.png" />
+    <style type="text/css">
+    .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 999;
+        position: fixed;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 5vmin;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #000000;
+        border-left-width: 0;
+        border-right-width: 0;
+        -webkit-transition:all 1s ease-in-out;
+        -moz-transition:all 1s ease-in-out;
+        transition:all 1s ease-in-out;
+        box-shadow: 0 0 0 100vmax #fff;
+    }
+    .pace .pace-progress {
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        transition: all 1s ease;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        position: fixed;
+        z-index: 2000;
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        border-right: 1px solid #000;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJklEQVQIW2NkYGD4D8QgwAil4QwUCbgssg5kQZBusA6QIIiBogMAEXwGBPQJcbQAAAAASUVORK5CYII=);
+    }
+    .pace::after {
+        content:'Loading...';
+        position: absolute;
+        bottom:7vmin;
+        width:100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .pace .pace-progress::before {
+        content: attr(data-progress-text);
+        position: absolute;
+        top: 7vmin;
+        width:100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .pace.pace-inactive {
+        opacity: 0;
+        z-index: -10;
+    }
+    </style>
+    <style type="text/css">
+    audio, .audioplayer {
+        z-index: 2;
+    }
+    * {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .audioplayer {
+        height: 2.5em;
+        width: 80%;
+        color: #000;
+        font-weight: 300;
+        background: #eee;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 0 1px #666;
+        border-radius: 4px;
+    }
+    /* fallback case (read Adaptiveness chapter) */
+    .audioplayer-mini {
+        width: 2.5em;
+        /* 40 */
+        margin: 0 auto;
+    }
+    /* inner elements positioning (helps to achieve responsiveness) */
+    .audioplayer > div {
+        position: absolute;
+    }
+    .audioplayer-playpause {
+        width: 2.5em;
+        /* 40 */
+        height: 100%;
+        text-align: left;
+        text-indent: -9999px;
+        cursor: pointer;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        border-radius: 4px 0 0 4px;
+    }
+    .audioplayer-mini .audioplayer-playpause {
+        width: 100%;
+    }
+    .audioplayer-playpause:hover, .audioplayer-playpause:focus {
+        background-color: #aaa;
+    }
+    .audioplayer-playpause a {
+        display: block;
+    }
+    /* "play" icon when audio is not being played */
+    .audioplayer:not(.audioplayer-playing) .audioplayer-playpause a {
+        width: 0;
+        height: 0;
+        border: 0.5em solid transparent;
+        /* 8 */
+        border-right: none;
+        border-left-color: #000;
+        content:'';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -0.5em 0 0 -0.25em;
+        /* 8 4 */
+    }
+    /* "pause" icon when audio is being played */
+    .audioplayer-playing .audioplayer-playpause a {
+        width: 0.75em;
+        /* 12 */
+        height: 0.75em;
+        /* 12 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -0.375em 0 0 -0.375em;
+        /* 6 */
+    }
+    .audioplayer-playing .audioplayer-playpause a:before, .audioplayer-playing .audioplayer-playpause a:after {
+        width: 40%;
+        height: 100%;
+        background-color: #000;
+        content:'';
+        position: absolute;
+        top: 0;
+    }
+    .audioplayer-playing .audioplayer-playpause a:before {
+        left: 0;
+    }
+    .audioplayer-playing .audioplayer-playpause a:after {
+        right: 0;
+    }
+    .audioplayer-time {
+        width: 4.375em;
+        /* 70 */
+        height: 100%;
+        line-height: 2.5em;
+        /* 40 */
+        text-align: center;
+        z-index: 2;
+        top: 0;
+    }
+    .audioplayer-time-current {
+        border-left: 1px solid #000;
+        left: 2.5em;
+        /* 40 */
+    }
+    .audioplayer-time-duration {
+        right: 2.5em;
+        /* 40 */
+    }
+    .audioplayer-novolume .audioplayer-time-duration {
+        border-right: 0;
+        right: 0;
+    }
+    .audioplayer-bar {
+        height: 0.875em;
+        /* 14 */
+        background-color: #999;
+        cursor: pointer;
+        z-index: 1;
+        top: 50%;
+        right: 6.875em;
+        /* 110 */
+        left: 6.875em;
+        /* 110 */
+        margin-top: -0.438em;
+        /* 7 */
+    }
+    .audioplayer-novolume .audioplayer-bar {
+        right: 4.375em;
+        /* 70 */
+    }
+    .audioplayer-bar div {
+        width: 0;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .audioplayer-bar-loaded {
+        background-color: #aaa;
+        z-index: 1;
+    }
+    .audioplayer-bar-played {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJklEQVQIW2NkYGD4D8QgwAil4QwUCbgssg5kQZBusA6QIIiBogMAEXwGBPQJcbQAAAAASUVORK5CYII=);
+        border-right: 1px solid #000;
+        border-left: 1px solid #000;
+        background-color: #eee;
+        z-index: 2;
+    }
+    .audioplayer-volume {
+        width: 2.5em;
+        /* 40 */
+        height: 100%;
+        border-left: 1px solid #111;
+        text-align: left;
+        text-indent: -9999px;
+        cursor: pointer;
+        z-index: 2;
+        top: 0;
+        right: 0;
+    }
+    .audioplayer-volume:hover, .audioplayer-volume:focus {
+        background-color: #222;
+    }
+    .audioplayer-volume-button {
+        width: 100%;
+        height: 100%;
+    }
+    /* "volume" icon */
+    .audioplayer-volume-button a {
+        width: 0.313em;
+        /* 5 */
+        height: 0.375em;
+        /* 6 */
+        background-color: #fff;
+        display: block;
+        position: relative;
+        z-index: 1;
+        top: 40%;
+        left: 35%;
+    }
+    .audioplayer-volume-button a:before, .audioplayer-volume-button a:after {
+        content:'';
+        position: absolute;
+    }
+    .audioplayer-volume-button a:before {
+        width: 0;
+        height: 0;
+        border: 0.5em solid transparent;
+        /* 8 */
+        border-left: none;
+        border-right-color: #fff;
+        z-index: 2;
+        top: 50%;
+        right: -0.25em;
+        margin-top: -0.5em;
+        /* 8 */
+    }
+    .audioplayer:not(.audioplayer-mute) .audioplayer-volume-button a:after {
+        /* "volume" icon by Nicolas Gallagher, http://nicolasgallagher.com/pure-css-gui-icons */
+        width: 0.313em;
+        /* 5 */
+        height: 0.313em;
+        /* 5 */
+        border: 0.25em double #fff;
+        /* 4 */
+        border-width: 0.25em 0.25em 0 0;
+        /* 4 */
+        left: 0.563em;
+        /* 9 */
+        top: -0.063em;
+        /* 1 */
+        /* 15 */
+        /* 15 */
+        border-radius: 0 0.938em 0 0;
+        /* 15 */
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    /* volume adjuster */
+    .audioplayer-volume-adjust {
+        width: 100%;
+        height: 6.25em;
+        /* 100 */
+        cursor: default;
+        position: absolute;
+        left: 0;
+        top: -9999px;
+        background: #222;
+    }
+    .audioplayer-volume:not(:hover) .audioplayer-volume-adjust {
+        opacity: 0;
+    }
+    .audioplayer-volume:hover .audioplayer-volume-adjust {
+        top: auto;
+        bottom: 100%;
+    }
+    .audioplayer-volume-adjust > div {
+        width: 40%;
+        height: 80%;
+        background-color: #555;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        margin: 30% auto 0;
+    }
+    .audioplayer-volume-adjust div div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #007fd1;
+    }
+    .audioplayer-novolume .audioplayer-volume {
+        display: none;
+    }
+    </style>
+</head>
+
+<body id="main" style="opacity:0">
+    <div class="main">
+        <section class="window" style="overflow-x:hidden">
+            <a id="menu">Menu</a>
+            <nav>
+                <a class="side-nav">Elements &amp; Principles</a>
+                <br/>
+                <a class="side-nav link" href="filters.html">Filters</a>
+                <br/>
+                <a class="side-nav link" href="triptych.html">Triptych</a>
+                <br/>
+                <a class="side-nav link" href="typography.html">Typography</a>
+                <br/>
+            </nav>
+            <div class="begin">
+                <h1>Eden S.-G.</h1>
+                <div style="display: flex; text-align: center; flex-direction: row; justify-content: space-around; width: 100vw;">
+                    <h4 class="nav prev">
+                        <a class="nav prev trans" href="index.html"></a>
+                        <h4 class="nav current">Soundscape</h4>
+                        <h4 class="nav next"><a class="nav next trans" href="filters.html">Filters</a>
+                        </h4>
+                </div>
+                <audio preload="auto" controls>
+                    <source src="audio/BlueDucks_FourFlossFiveSix.mp3" />
+                    <source src="audio/BlueDucks_FourFlossFiveSix.ogg" />
+                    <source src="audio/BlueDucks_FourFlossFiveSix.wav" />
+                </audio>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/audioplayer.js"></script>
+    <script type="text/javascript">
+    $(document).load(function() {
+        $("body").show();
+    });
+    $(document).mousemove(function(event) {
+        $("body").show();
+    });
+    $(document).ready(function() {
+        $('audio').audioPlayer();
+        $('body').css('opacity', '1');
+        $("a.trans").click(function(event) {
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").css('opacity', '0');
+            setTimeout(function() {
+                redirectPage();
+            }, 1100);
+        });
+        $("a#menu").mouseover(function() {
+            $("nav").addClass('shown');
+        });
+        $("nav").mouseleave(function(event) {
+            $(this).removeClass('shown');
+        });
+    });
+
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+
+    var e = document.getElementById("fullscreen");
+
+    e.onclick = function() {
+
+        if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
+            RunPrefixMethod(document, "CancelFullScreen");
+        } else {
+            RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
+        }
+
+    }
+
+    var pfx = ["webkit", "moz", "ms", "o", ""];
+
+    function RunPrefixMethod(obj, method) {
+
+        var p = 0,
+            m, t;
+        while (p < pfx.length && !obj[m]) {
+            m = method;
+            if (pfx[p] == "") {
+                m = m.substr(0, 1).toLowerCase() + m.substr(1);
+            }
+            m = pfx[p] + m;
+            t = typeof obj[m];
+            if (t != "undefined") {
+                pfx = [pfx[p]];
+                return (t == "function" ? obj[m]() : obj[m]);
+            }
+            p++;
+        }
+
+    }
+    </script>
+</body>
+
+</html>
