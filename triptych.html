@@ -9,10 +9,10 @@
     </script>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <title>Triptych</title>
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="js/pace.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="typography.css" />
     <link rel="stylesheet" type="text/css" href="lightbox.css">
+    <link rel="stylesheet" href="triptych.css">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-72x72.png" />
@@ -24,179 +24,107 @@
     <meta name="application-name" content="Eden S.-G." />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/img/mstile-144x144.png" />
-    <style type="text/css">
-    .pace {
-        -webkit-pointer-events: none;
-        pointer-events: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        z-index: 999;
-        position: fixed;
-        margin: auto;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 5vmin;
-        width: 100%;
-        background: #fff;
-        border: 1px solid #000000;
-        border-left-width: 0;
-        border-right-width: 0;
-        -webkit-transition:all 1s ease-in-out;
-        -moz-transition:all 1s ease-in-out;
-        transition:all 1s ease-in-out;
-        box-shadow: 0 0 0 100vmax #fff;
-    }
-    .pace .pace-progress {
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        -o-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition: all 1s ease;
-        -moz-transition: all 1s ease;
-        transition: all 1s ease;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        position: fixed;
-        z-index: 2000;
-        display: block;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        height: 100%;
-        border-right: 1px solid #000;
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJklEQVQIW2NkYGD4D8QgwAil4QwUCbgssg5kQZBusA6QIIiBogMAEXwGBPQJcbQAAAAASUVORK5CYII=);
-    }
-    .pace::after {
-        content:'Loading...';
-        position: absolute;
-        bottom:7vmin;
-        width:100%;
-        text-align: center;
-        font-size: 1rem;
-    }
-    .pace .pace-progress::before {
-        content: attr(data-progress-text);
-        position: absolute;
-        top: 7vmin;
-        width:100%;
-        text-align: center;
-        font-size: 1rem;
-    }
-    .pace.pace-inactive {
-        opacity: 0;
-        z-index: -10;
-    }
-    </style>
 </head>
 
-<body id="main" style="opacity:0">
-    <a href="#" onclick="$('.main').moveDown();">
-        <h2 id="scroll-down">&gt;</h2>
-    </a>
-    <div class="main">
-        <section class="window" style="overflow-x:hidden">
-            <a id="menu">Menu</a>
-            <nav>
-                <a class="side-nav link" href="index.html">Elements &amp; Principles</a>
-                <br/>
-                <a class="side-nav link" href="filters.html">Filters</a>
-                <br/>
-                <a class="side-nav">Triptych</a>
-                <br/>
-                <a class="side-nav link" href="typography.html">Typography</a>
-                <br/>
-            </nav>
-            <div class="begin">
-                <h1>Eden S.-G.</h1>
-                <div style="display: flex; text-align: center; flex-direction: row; justify-content: space-around; width: 100vw;">
-                    <h4 class="nav prev"><a class="nav prev trans" href="filters.html">Filters</a>
-                    </h4>
-                    <h4 class="nav current">Triptych</h4>
-                    <h4 class="nav next">
-                        <a class="nav next trans" href="typography.html">Typography</a>
-                    </h4>
-                </div>
-            </div>
-        </section>
-        <section class="window triptych" style="display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;background:#000">
-            <div id="fullscreenSlideshowContainer">
-                <div class="image">
-                    <a data-order="1" class="venobox" data-lightbox="maingall" href="img/Triptych/Streetlight.jpg">
-                        <img src="img/Triptych/Streetlight.jpg">
-                    </a>
-                </div>
-                <div class="image">
-                    <a data-order="2" class="venobox" data-lightbox="maingall" href="img/Triptych/Outdoorlight.jpg">
-                        <img src="img/Triptych/Outdoorlight.jpg">
-                    </a>
-                </div>
-                <div class="image">
-                    <a data-order="3" class="venobox" data-lightbox="maingall" href="img/Triptych/Spotlight.jpg">
-                        <img src="img/Triptych/Spotlight.jpg">
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section class="window images" style="background-image: url('img/Triptych/Outdoorlight-double(triple)exposure.jpg')">
-            <aside>Multiple Exposures</aside>
-        </section>
+<body>
+    <a id="menu">Menu</a>
+    <nav>
+        <a class="side-nav link" href="index.html">Elements &amp; Principles</a>
+        <br/>
+        <a class="side-nav link" href="filters.html">Filters</a>
+        <br/>
+        <a class="side-nav">Triptych</a>
+        <br/>
+        <a class="side-nav link" href="typography.html">Typography</a>
+        <br/>
+        <a href="soundscape.html" class="side-nav link">Soundscape</a>
+        <br>
+        <a href="stopmotion.html" class="side-nav link">Stop-motion</a>
+        <br>
+        <a href="surrealism" class="side-nav link">Surrealism</a>
+        <br>
+    </nav>
+    <h2 href id="scroll-down" data--1p="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-100p="transform:translate(0,40%) rotate(90deg);opacity:0;z-index:!20" data-101p="z-index:!-1" onclick="ScrollTo(1.15);">&gt;</h2>
+    <div class="full-width header fixed" data-0="transform[quadratic]:translate(0,0%);opacity:1" data-90p="transform[quadratic]:translate(0,-10%);opacity:0">
+        <h1>
+            Eden S.-G.
+        </h1>
+        <h3>
+            Elements &amp; Principles
+        </h3>
     </div>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+    <section class="full-width fixed triptych" style="background:#000;box-shadow:0 0 0 120px rgba(0,0,0,0.75)" data-60p="opacity:0;transform[sqrt]:scale(1, 0.95);-webkit-transform[sqrt]:scale(1, 0.95)" data-80p="opacity:1;transform:scale(1, 1);-webkit-transform:scale(1, 1)" data-200p="opacity:1;transform[quadratic]:scale(1, 1);-webkit-transform[quadratic]:scale(1, 1)" data-220p="opacity:0;transform[quadratic]:scale(1, 1.1);-webkit-transform[quadratic]:scale(1, 1.1)">
+        <div id="fullscreenSlideshowContainer">
+            <div class="image">
+                <a data-order="1" class="venobox" data-lightbox="maingall" href="img/Triptych/Streetlight.jpg">
+                    <img src="img/Triptych/Streetlight.jpg">
+                </a>
+            </div>
+            <div class="image">
+                <a data-order="2" class="venobox" data-lightbox="maingall" href="img/Triptych/Outdoorlight.jpg">
+                    <img src="img/Triptych/Outdoorlight.jpg">
+                </a>
+            </div>
+            <div class="image">
+                <a data-order="3" class="venobox" data-lightbox="maingall" href="img/Triptych/Spotlight.jpg">
+                    <img src="img/Triptych/Spotlight.jpg">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="full-width fixed" style="background-image: url('img/Triptych/Outdoorlight-double(triple)exposure.jpg')" data-200p="opacity:0;left[sqrt]:-3%" data-220p="opacity:1;left:-1%" data-340p="opacity:1;left[quadratic]:1%" data-360p="opacity:0;left:2%">
+        <aside>
+            <h5>
+                Multiple Exposures
+            </h5>
+        </aside>
+    </section>
+
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
     <script type="text/javascript">
-    // var gallNum = 0;
-    $(document).load(function() {
-        $("body").fadeIn(500);
-    });
+    skrollr.init();
 
     $(document).ready(function() {
-        $('head').append($('<link async rel="stylesheet" type="text/css" />').attr('href', 'onepage.css'));
-        $('head').append($('<link async rel="stylesheet" type="text/css" />').attr('href', 'triptych.css'));
-        $('body').css('opacity', '1');
-
-        $(".main").onepage_scroll({
-            sectionContainer: "section",
-            animationTime: 1000,
-            pagination: true,
-            updateURL: false,
-            beforeMove: function(index) {
-                $("#scroll-down").css({
-                    'opacity': '0',
-                    'bottom': '-12vmin',
-                    'visibility': 'hidden'
-                });
-            },
-            afterMove: function(index) {},
-            loop: false,
-            keyboard: true,
-            responsiveFallback: 500
-        });
-
-        $("a.trans").click(function(event) {
-            event.preventDefault();
-            linkLocation = this.href;
-            $("body").css('opacity', '0');
-            setTimeout(function() {
-                redirectPage();
-            }, 1100);
-        });
+        $('body').animate({
+            scrollTop: '1px'
+        }, 100);
+        $('.fixed').css('position', 'fixed');
         $("a#menu").mouseover(function() {
+            $(this).css('opacity', '0');
             $("nav").addClass('shown');
         });
         $("nav").mouseleave(function(event) {
             $(this).removeClass('shown');
+            $("a#menu").css('opacity', '1');
         });
+        // for (var i = 0; i < $('section img').size(); i++) {
 
+        //         $('section img').eq(i).attr('src', $('section img').eq(i).attr('data-background'));
+        // };
+
+        for (var i = 0; i <= $('section img').size(); i++) {
+            $('section img').eq(i).attr('src', $('section img').eq(i).attr('data-background'));
+        }
     });
 
-    function redirectPage() {
-        window.location = linkLocation;
+    function ScrollTo(amount) {
+        $('body').animate({
+            scrollTop: $(window).height() * amount
+        }, 1000)
+    }
+
+    function next() {
+        $('body').animate({
+            scrollTop: $(window).height() * 1.4 + window.pageYOffset
+        }, 350)
+    }
+
+    function prev() {
+        $('body').animate({
+            scrollTop: $(window).height() * -1.4 + window.pageYOffset
+        }, 350)
     }
     </script>
 </body>
