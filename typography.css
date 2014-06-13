@@ -1,9 +1,5 @@
-/* YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) - http://cssreset.com */
- html {
-    color:#000;
-    background:#FFF
-}
-blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+/* Part of YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) - http://cssreset.com */
+ blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
     margin:0;
     padding:0
 }
@@ -21,19 +17,9 @@ address, caption, cite, code, dfn, em, strong, th, var {
 ol, ul {
     list-style:none
 }
-caption, th {
-    text-align:left
-}
 h1, h2, h3, h4, h5, h6 {
     font-size:100%;
-    font-weight:100;
-}
-q:after, q:before {
-    content:''
-}
-abbr, acronym {
-    border:0;
-    font-variant:normal
+    font-weight:100
 }
 sup {
     vertical-align:text-top
@@ -41,67 +27,59 @@ sup {
 sub {
     vertical-align:text-bottom
 }
-input, select, textarea {
-    font-family:inherit;
-    font-size:inherit;
-    font-weight:inherit;
-    *font-size:100%
-}
-legend {
-    color:#000
-}
 /* Google Fonts */
  @font-face {
-    font-family:'Raleway';
-    font-style: normal;
-    font-weight: 100;
-    src: local('Raleway Thin'), local('Raleway-Thin'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/RJMlAoFXXQEzZoMSUteGWLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+    font-family:Raleway;
+    font-style:normal;
+    font-weight:100;
+    src:local('Raleway Thin'), local('Raleway-Thin'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/RJMlAoFXXQEzZoMSUteGWLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff')
 }
 @font-face {
-    font-family:'Raleway';
-    font-style: normal;
-    font-weight: 200;
-    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/8KhZd3VQBtXTAznvKjw-k73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+    font-family:Raleway;
+    font-style:normal;
+    font-weight:200;
+    src:local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/8KhZd3VQBtXTAznvKjw-k73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff')
 }
 @font-face {
-    font-family:'Raleway';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Raleway Light'), local('Raleway-Light'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/-_Ctzj9b56b8RgXW8FArib3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+    font-family:Raleway;
+    font-style:normal;
+    font-weight:300;
+    src:local('Raleway Light'), local('Raleway-Light'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/-_Ctzj9b56b8RgXW8FArib3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff')
 }
 @font-face {
-    font-family:'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Raleway'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/cIFypx4yrWPDz3zOxk7hIQLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+    font-family:Raleway;
+    font-style:normal;
+    font-weight:400;
+    src:local('Raleway'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/cIFypx4yrWPDz3zOxk7hIQLUuEpTyoUstqEm5AMlJo4.woff) format('woff')
 }
 @font-face {
-    font-family:'Raleway';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Raleway Medium'), local('Raleway-Medium'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/CcKI4k9un7TZVWzRVT-T873hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+    font-family:Raleway;
+    font-style:normal;
+    font-weight:500;
+    src:local('Raleway Medium'), local('Raleway-Medium'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/CcKI4k9un7TZVWzRVT-T873hpw3pgy2gAi-Ip7WPMi0.woff) format('woff')
 }
 @font-face {
-    font-family:'Raleway';
-    font-style: normal;
-    font-weight: 600;
-    src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/xkvoNo9fC8O2RDydKj12b73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+    font-family:Raleway;
+    font-style:normal;
+    font-weight:600;
+    src:local('Raleway SemiBold'), local('Raleway-SemiBold'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/xkvoNo9fC8O2RDydKj12b73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff')
 }
 @font-face {
     font-family:'Raleway Dots';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Raleway Dots'), local('RalewayDots-Regular'), url(https://themes.googleusercontent.com/static/fonts/ralewaydots/v2/lhLgmWCRcyz-QXo8LCzTfKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+    font-style:normal;
+    font-weight:400;
+    src:local('Raleway Dots'), local('RalewayDots-Regular'), url(https://themes.googleusercontent.com/static/fonts/ralewaydots/v2/lhLgmWCRcyz-QXo8LCzTfKRDOzjiPcYnFooOUGCOsRk.woff) format('woff')
 }
 /* Main stylesheet */
  html, body {
     font-family:'Raleway', sans-serif;
     font-weight: 100;
     font-size: 18px;
-    font-size:3vmin;
+    font-size:2vmax;
     overflow-x:hidden;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALklEQVQIW2N89+7dfwYgEBISYgTRMADmYJOEq0KXRNGOLIkigWwsI0gVusUgMQBVzxuZidEM8gAAAABJRU5ErkJggg==);
     background-color: #fff;
+    color: #000;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALklEQVQIW2N89+7dfwYgEBISYgTRMADmYJOEq0KXRNGOLIkigWwsI0gVusUgMQBVzxuZidEM8gAAAABJRU5ErkJggg==);
     -webkit-animation:fade-in 0.7s ease 1;
     animation:fade-in 0.7s ease 1;
 }
@@ -129,6 +107,16 @@ legend {
         transform: scale(1);
     }
 }
+::-moz-selection {
+    background: rgba(130, 185, 252, 0.5);
+    /*text-shadow: 0 1px #888;*/
+    color: #30455E;
+}
+::selection {
+    background: rgba(130, 185, 252, 0.5);
+    /*text-shadow: 0 1px #888;*/
+    color: #30455E;
+}
 .full-width {
     width: 100%;
     height:100vh;
@@ -140,12 +128,10 @@ img:not(.lb-image) {
     max-width: 100%;
     max-height: 100%;
     max-height: 100vh;
-    /*box-shadow: 0 0 100px 100px #fff;*/
     position: relative;
-    left: 5px;
     top:1px;
 }
-section.full-width div {
+section.full-width:not(.audio) div {
     max-width: 60%;
 }
 h4, aside {
@@ -161,6 +147,9 @@ h4, aside {
     font-weight: 400;
     border-radius: 0.3rem;
     width: 30%;
+}
+h4 {
+    width: auto;
 }
 section.full-width {
     display: -webkit-box;
@@ -180,7 +169,10 @@ section.full-width {
     -webkit-flex-direction:row;
     -ms-flex-direction:row;
     flex-direction:row;
-    box-shadow: 0 0 0 12px rgab(0,0,0,0.5);
+    -webkit-align-content:space-around;
+    -ms-flex-line-pack:distribute;
+    align-content:space-around;
+    box-shadow: 0 0 0 12px rgab(0, 0, 0, 0.5);
 }
 .skrollable-between {
     z-index:10;
@@ -266,7 +258,7 @@ aside a {
     cursor: pointer;
     -webkit-transition:all 0.3s ease;
     transition:all 0.3s ease;
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 4px;
     border-radius: 4px;
 }
@@ -310,6 +302,8 @@ nav .side-nav.link:hover {
     transition:all 0.2s ease;
 }
 nav.shown {
+    -webkit-transform:translate(-100%, 0);
+    transform:translate(-100%, 0);
     -webkit-transform:translate(-18vw, 0);
     transform:translate(-18vw, 0);
     -webkit-transition:all 0.5s 0.2s ease;
@@ -352,7 +346,7 @@ nav.shown {
         font-size: 3rem;
     }
 }
-@media (max-aspect-ratio:7/6) {
+@media (max-aspect-ratio:5/8) {
     section.full-width {
         -webkit-box-orient:vertical;
         -webkit-box-direction:normal;
@@ -363,8 +357,12 @@ nav.shown {
     aside {
         width: 90%;
         margin: 0 auto;
+        bottom:1px;
+        top:auto;
+        position: relative;
+        z-index: 3;
     }
-    section div {
-        padding-top:5px;
+    section.full-width div {
+        max-width: 100%;
     }
 }

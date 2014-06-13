@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+    <g>
+        <rect width="48" height="48" rx="0" ry="0" fill="none"/>
+        <path d="M33.75 39c11-7 11-23 0-30" stroke="transparent" stroke-width="12" stroke-linecap="miter" stroke-linejoin="miter" fill="none"/>
+        <path d="M4.022 16.109l-.022 15.891h10l10 10 .022-35.891-10 10h-10z" fill="transparent" fill-rule="evenodd" stroke="transparent" stroke-width="8" stroke-linecap="miter" stroke-linejoin="miter"/>
+        <path d="M31 16c5 4 5 12 0 16" stroke="transparent" stroke-width="12" stroke-linecap="miter" stroke-linejoin="miter" fill="none"/>
+        <path d="M4.022 16.109l-.022 15.891h10l10 10 .022-35.891-10 10h-10z" fill-rule="evenodd"/>
+        <path d="M31 16c5 4 5 12 0 16" stroke="#000" stroke-width="4" stroke-linecap="miter" stroke-linejoin="miter" fill="none"/>
+        <path d="M33.75 39c11-7 11-23 0-30" stroke="#000" stroke-width="4" stroke-linecap="miter" stroke-linejoin="miter" fill="none"/>
+        <path d="M27 20c2 3 2 5 0 8" stroke="#000" stroke-width="4" stroke-linecap="miter" stroke-linejoin="miter" fill="none"/>
+    </g>
+</svg>

@@ -7,12 +7,10 @@
         document.location.href = "https://edensg.github.io" + document.location.pathname;
     };
     </script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <title>Soundscape</title>
-    <link async="true" href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/pace.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="typography.css" />
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-72x72.png" />
@@ -25,74 +23,6 @@
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/img/mstile-144x144.png" />
     <style type="text/css">
-    .pace {
-        -webkit-pointer-events: none;
-        pointer-events: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        z-index: 999;
-        position: fixed;
-        margin: auto;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 5vmin;
-        width: 100%;
-        background: #fff;
-        border: 1px solid #000000;
-        border-left-width: 0;
-        border-right-width: 0;
-        -webkit-transition:all 1s ease-in-out;
-        -moz-transition:all 1s ease-in-out;
-        transition:all 1s ease-in-out;
-        box-shadow: 0 0 0 100vmax #fff;
-    }
-    .pace .pace-progress {
-        -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-        -o-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition: all 1s ease;
-        -moz-transition: all 1s ease;
-        transition: all 1s ease;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        position: fixed;
-        z-index: 2000;
-        display: block;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        height: 100%;
-        border-right: 1px solid #000;
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJklEQVQIW2NkYGD4D8QgwAil4QwUCbgssg5kQZBusA6QIIiBogMAEXwGBPQJcbQAAAAASUVORK5CYII=);
-    }
-    .pace::after {
-        content:'Loading...';
-        position: absolute;
-        bottom:7vmin;
-        width:100%;
-        text-align: center;
-        font-size: 1rem;
-    }
-    .pace .pace-progress::before {
-        content: attr(data-progress-text);
-        position: absolute;
-        top: 7vmin;
-        width:100%;
-        text-align: center;
-        font-size: 1rem;
-    }
-    .pace.pace-inactive {
-        opacity: 0;
-        z-index: -10;
-    }
-    </style>
-    <style type="text/css">
     audio, .audioplayer {
         z-index: 2;
     }
@@ -102,13 +32,12 @@
     }
     .audioplayer {
         height: 2.5em;
-        width: 80%;
+        /* 40 */
         color: #000;
-        font-weight: 300;
-        background: #eee;
+        background: #ddd;
         position: relative;
         z-index: 1;
-        box-shadow: 0 0 0 1px #666;
+        width: 80%;
         border-radius: 4px;
     }
     /* fallback case (read Adaptiveness chapter) */
@@ -137,7 +66,7 @@
         width: 100%;
     }
     .audioplayer-playpause:hover, .audioplayer-playpause:focus {
-        background-color: #aaa;
+        background-color: #bbb;
     }
     .audioplayer-playpause a {
         display: block;
@@ -194,7 +123,7 @@
         top: 0;
     }
     .audioplayer-time-current {
-        border-left: 1px solid #000;
+        border-left: 1px solid #111;
         left: 2.5em;
         /* 40 */
     }
@@ -209,7 +138,7 @@
     .audioplayer-bar {
         height: 0.875em;
         /* 14 */
-        background-color: #999;
+        background-color: #fff;
         cursor: pointer;
         z-index: 1;
         top: 50%;
@@ -218,6 +147,7 @@
         left: 6.875em;
         /* 110 */
         margin-top: -0.438em;
+        border-radius: 4px;
         /* 7 */
     }
     .audioplayer-novolume .audioplayer-bar {
@@ -230,17 +160,26 @@
         position: absolute;
         left: 0;
         top: 0;
+        border-radius: 4px;
     }
     .audioplayer-bar-loaded {
-        background-color: #aaa;
+        background-color: #888;
         z-index: 1;
+        border-radius: 4px;
     }
     .audioplayer-bar-played {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJklEQVQIW2NkYGD4D8QgwAil4QwUCbgssg5kQZBusA6QIIiBogMAEXwGBPQJcbQAAAAASUVORK5CYII=);
-        border-right: 1px solid #000;
-        border-left: 1px solid #000;
-        background-color: #eee;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALklEQVQIW2N89+7dfwYgEBISYgTRMADmYJOEq0KXRNGOLIkigWwsI0gVusUgMQBVzxuZidEM8gAAAABJRU5ErkJggg==);
+        background-color: #aaa;
+        background-position: -50% 0%;
         z-index: 2;
+        -webkit-transition:all 0.5s linear;
+        transition:all 0.5s linear;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+    }
+    .audioplayer-bar:hover > .audioplayer-bar-played {
+        -webkit-transition:all 0.05s linear;
+        transition:all 0.05s linear;
     }
     .audioplayer-volume {
         width: 2.5em;
@@ -253,9 +192,10 @@
         z-index: 2;
         top: 0;
         right: 0;
+        border-radius: 0 0 4px 0;
     }
     .audioplayer-volume:hover, .audioplayer-volume:focus {
-        background-color: #222;
+        background-color: #aaa;
     }
     .audioplayer-volume-button {
         width: 100%;
@@ -267,7 +207,7 @@
         /* 5 */
         height: 0.375em;
         /* 6 */
-        background-color: #fff;
+        background-color: #000;
         display: block;
         position: relative;
         z-index: 1;
@@ -284,7 +224,7 @@
         border: 0.5em solid transparent;
         /* 8 */
         border-left: none;
-        border-right-color: #fff;
+        border-right-color: #000;
         z-index: 2;
         top: 50%;
         right: -0.25em;
@@ -297,7 +237,7 @@
         /* 5 */
         height: 0.313em;
         /* 5 */
-        border: 0.25em double #fff;
+        border: 0.25em double #000;
         /* 4 */
         border-width: 0.25em 0.25em 0 0;
         /* 4 */
@@ -321,7 +261,8 @@
         position: absolute;
         left: 0;
         top: -9999px;
-        background: #222;
+        background: #aaa;
+        border-radius: 4px 4px 0 0;
     }
     .audioplayer-volume:not(:hover) .audioplayer-volume-adjust {
         opacity: 0;
@@ -338,6 +279,7 @@
         position: relative;
         z-index: 1;
         margin: 30% auto 0;
+        border-radius: 4px;
     }
     .audioplayer-volume-adjust div div {
         width: 100%;
@@ -345,110 +287,94 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background: #007fd1;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALklEQVQIW2N89+7dfwYgEBISYgTRMADmYJOEq0KXRNGOLIkigWwsI0gVusUgMQBVzxuZidEM8gAAAABJRU5ErkJggg==);
+        background-color: #aaa;
+        background-position: 0% 90%;
+        border-radius: 4px;
+        border: 1px solid #888;
     }
     .audioplayer-novolume .audioplayer-volume {
         display: none;
     }
+    /*/////*/
+    #audio {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack:center;
+        -webkit-justify-content:center;
+        -ms-flex-pack:center;
+        justify-content:center;
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+        -ms-flex-align:center;
+        align-items:center;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+        -webkit-flex-direction:column;
+        -ms-flex-direction:column;
+        flex-direction:column;
+        padding: 3%
+    }
+    #audio p {
+        padding: 2%;
+    }
     </style>
 </head>
 
-<body id="main" style="opacity:0">
-    <div class="main">
-        <section class="window" style="overflow-x:hidden">
-            <a id="menu">Menu</a>
-            <nav>
-                <a class="side-nav">Elements &amp; Principles</a>
-                <br/>
-                <a class="side-nav link" href="filters.html">Filters</a>
-                <br/>
-                <a class="side-nav link" href="triptych.html">Triptych</a>
-                <br/>
-                <a class="side-nav link" href="typography.html">Typography</a>
-                <br/>
-            </nav>
-            <div class="begin">
-                <h1>Eden S.-G.</h1>
-                <div style="display: flex; text-align: center; flex-direction: row; justify-content: space-around; width: 100vw;">
-                    <h4 class="nav prev">
-                        <a class="nav prev trans" href="index.html"></a>
-                        <h4 class="nav current">Soundscape</h4>
-                        <h4 class="nav next"><a class="nav next trans" href="filters.html">Filters</a>
-                        </h4>
-                </div>
-                <audio preload="auto" controls>
-                    <source src="audio/BlueDucks_FourFlossFiveSix.mp3" />
-                    <source src="audio/BlueDucks_FourFlossFiveSix.ogg" />
-                    <source src="audio/BlueDucks_FourFlossFiveSix.wav" />
-                </audio>
-            </div>
-        </section>
+<body>
+    <a id="menu">Menu</a>
+    <nav>
+        <a class="side-nav link" href="index.html">Elements &amp; Principles</a>
+        <br/>
+        <a class="side-nav link" href="filters.html">Filters</a>
+        <br/>
+        <a class="side-nav link" href="triptych.html">Triptych</a>
+        <br/>
+        <a class="side-nav link" href="typography.html">Typography</a>
+        <br/>
+        <a class="side-nav">Soundscape</a>
+        <br>
+        <a href="stopmotion.html" class="side-nav link">Stop-motion</a>
+        <br>
+        <a href="surrealism.html" class="side-nav link">Surrealism</a>
+        <br>
+    </nav>
+    <div class="full-width header fixed">
+        <h1>
+            Eden S.-G.
+        </h1>
+        <h3>
+            Soundscape
+        </h3>
+        <div id="audio">
+        <audio preload="auto" controls style="visibility:hidden">
+            <source src="audio/soundscape.mp3" />
+            <source src="audio/soundscape.ogg" />
+            <source src="audio/soundscape.wav" />
+        </audio>
+        <p>Please use headphones or good speakers!</p>
+        </div>
     </div>
 
-    <script src="js/audioplayer.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.min.js"></script>  -->
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/audioplayer.js"></script>
     <script type="text/javascript">
-    $(document).load(function() {
-        $("body").show();
-    });
-    $(document).mousemove(function(event) {
-        $("body").show();
-    });
+
     $(document).ready(function() {
         $('audio').audioPlayer();
-        $('body').css('opacity', '1');
-        $("a.trans").click(function(event) {
-            event.preventDefault();
-            linkLocation = this.href;
-            $("body").css('opacity', '0');
-            setTimeout(function() {
-                redirectPage();
-            }, 1100);
-        });
+        $('.fixed').css('position', 'fixed');
         $("a#menu").mouseover(function() {
+            $(this).css('opacity', '0');
             $("nav").addClass('shown');
         });
         $("nav").mouseleave(function(event) {
             $(this).removeClass('shown');
+            $("a#menu").css('opacity', '1');
         });
     });
-
-    function redirectPage() {
-        window.location = linkLocation;
-    }
-
-    var e = document.getElementById("fullscreen");
-
-    e.onclick = function() {
-
-        if (RunPrefixMethod(document, "FullScreen") || RunPrefixMethod(document, "IsFullScreen")) {
-            RunPrefixMethod(document, "CancelFullScreen");
-        } else {
-            RunPrefixMethod(document.getElementById("main"), "RequestFullScreen");
-        }
-
-    }
-
-    var pfx = ["webkit", "moz", "ms", "o", ""];
-
-    function RunPrefixMethod(obj, method) {
-
-        var p = 0,
-            m, t;
-        while (p < pfx.length && !obj[m]) {
-            m = method;
-            if (pfx[p] == "") {
-                m = m.substr(0, 1).toLowerCase() + m.substr(1);
-            }
-            m = pfx[p] + m;
-            t = typeof obj[m];
-            if (t != "undefined") {
-                pfx = [pfx[p]];
-                return (t == "function" ? obj[m]() : obj[m]);
-            }
-            p++;
-        }
-
-    }
     </script>
 </body>
 

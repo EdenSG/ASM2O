@@ -7,9 +7,9 @@
         document.location.href = "https://edensg.github.io" + document.location.pathname;
     };
     </script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <title>Filters</title>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="typography.css" />
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
@@ -42,13 +42,13 @@
         <a href="surrealism" class="side-nav link">Surrealism</a>
         <br>
     </nav>
-    <h2 href id="scroll-down" data--1p="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-100p="transform:translate(0,40%) rotate(90deg);opacity:0;z-index:!20" data-101p="z-index:!-1" onclick="ScrollTo(1.15);">&gt;</h2>
+    <h2 href id="scroll-down" data--1p="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-100p="transform:translate(0,40%) rotate(90deg);opacity:0;z-index:!20" data-101p="z-index:!-1" onclick="ScrollTo(1.41);">&gt;</h2>
     <div class="full-width header fixed" data-0="transform[quadratic]:translate(0,0%);opacity:1" data-90p="transform[quadratic]:translate(0,-10%);opacity:0">
         <h1>
             Eden S.-G.
         </h1>
         <h3>
-            Elements &amp; Principles
+            Filters
         </h3>
     </div>
     <section class="full-width fixed" data-60p="opacity:0;left[sqrt]:-3%" data-80p="opacity:1;left:-1%" data-200p="opacity:1;left[quadratic]:1%" data-220p="opacity:0;left:2%">
@@ -129,14 +129,17 @@
         </aside>
     </section>
 
-    <script type="text/javascript" src="js/skrollr.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" async src="js/skrollr.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
     skrollr.init();
 
     $(document).ready(function() {
+        $('html').animate({
+            scrollTop: '0'
+        }, 100);
         $('body').animate({
-            scrollTop: '1px'
+            scrollTop: '0'
         }, 100);
         $('.fixed').css('position', 'fixed');
         $("a#menu").mouseover(function() {
@@ -158,21 +161,30 @@
     });
 
     function ScrollTo(amount) {
+        $('html').animate({
+            scrollTop: $(window).height() * amount
+        }, 1000);
         $('body').animate({
             scrollTop: $(window).height() * amount
-        }, 1000)
+        }, 1000);
     }
 
     function next() {
+        $('html').animate({
+            scrollTop: $(window).height() * 1.4 + window.pageYOffset
+        }, 350);
         $('body').animate({
             scrollTop: $(window).height() * 1.4 + window.pageYOffset
-        }, 350)
+        }, 350);
     }
 
     function prev() {
+        $('html').animate({
+            scrollTop: $(window).height() * -1.4 + window.pageYOffset
+        }, 350);
         $('body').animate({
             scrollTop: $(window).height() * -1.4 + window.pageYOffset
-        }, 350)
+        }, 350);
     }
     </script>
 </body>
