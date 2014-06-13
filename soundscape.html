@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background:#fff">
+<html>
 
 <head>
     <script language="javascript">
@@ -349,12 +349,12 @@
             Soundscape
         </h3>
         <div id="audio">
-        <audio preload="auto" controls style="visibility:hidden">
-            <source src="audio/soundscape.mp3" />
-            <source src="audio/soundscape.ogg" />
-            <source src="audio/soundscape.wav" />
-        </audio>
-        <p>Please use headphones or good speakers!</p>
+            <audio preload="auto" controls style="visibility:hidden">
+                <source src="audio/soundscape.mp3" />
+                <source src="audio/soundscape.ogg" />
+                <source src="audio/soundscape.wav" />
+            </audio>
+            <p>Please use headphones or good speakers!</p>
         </div>
     </div>
 
@@ -362,7 +362,6 @@
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/audioplayer.js"></script>
     <script type="text/javascript">
-
     $(document).ready(function() {
         $('audio').audioPlayer();
         $('.fixed').css('position', 'fixed');
