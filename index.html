@@ -10,7 +10,7 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <title>Elements &amp; Principles</title>
-    
+    <link rel="stylesheet" type="text/css" href="main.min.css" />
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-72x72.png" />
@@ -207,19 +207,6 @@
         </aside>
     </section>
     <a style="position: absolute;top: 1990vh;width: 100%;text-align: center;font-size: 2em;" onclick="ScrollTo(0)">Back to the top</a>
-    <script type="text/javascript">
-    var cb = function() {
-        var l = document.createElement('link');
-        l.rel = 'stylesheet';
-        l.href = 'main.min.css';
-        var h = document.getElementsByTagName('head')[0];
-        h.parentNode.insertBefore(l, h);
-    };
-    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-        webkitRequestAnimationFrame || msRequestAnimationFrame;
-    if (raf) raf(cb);
-    else window.addEventListener('load', cb);
-    </script>
     <script type="text/javascript" async src="js/skrollr.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
