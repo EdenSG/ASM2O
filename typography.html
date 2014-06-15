@@ -68,70 +68,20 @@
     </div>
     <h4 data-340p="top[sqrt]:5%;opacity:0" data-350p="top:20%;opacity:1" data-470p="top[quadratic]:25%;opacity:1" data-480p="top:60%;opacity:0">Cory Doctorow, Variation 3</h4>
 
+    <div id="outdated">
+        <h6>Your browser is out-of-date!</h6>
+        <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a>
+        </p>
+        <p id="btnClose"><a href="#">Close</a>
+        </p>
+    </div>
 
     <script language="javascript">
     if (document.location.protocol != "https:" && document.location.hostname != "localhost") {
         document.location.href = "https://edensg.github.io" + document.location.pathname;
     };
     </script>
-    <script type="text/javascript" async src="js/skrollr.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-    skrollr.init();
-
-    $(document).ready(function() {
-        $('html').animate({
-            scrollTop: '0'
-        }, 100);
-        $('body').animate({
-            scrollTop: '0'
-        }, 100);
-        $('.fixed').css('position', 'fixed');
-        $("a#menu").mouseover(function() {
-            $(this).css('opacity', '0');
-            $("nav").addClass('shown');
-        });
-        $("nav").mouseleave(function(event) {
-            $(this).removeClass('shown');
-            $("a#menu").css('opacity', '1');
-        });
-        // for (var i = 0; i < $('section img').size(); i++) {
-
-        //         $('section img').eq(i).attr('src', $('section img').eq(i).attr('data-background'));
-        // };
-
-        for (var i = 0; i <= $('section img').size(); i++) {
-            $('section img').eq(i).attr('src', $('section img').eq(i).attr('data-background'));
-        }
-    });
-
-    function ScrollTo(amount) {
-        $('html').animate({
-            scrollTop: $(window).height() * amount
-        }, 1000);
-        $('body').animate({
-            scrollTop: $(window).height() * amount
-        }, 1000);
-    }
-
-    function next() {
-        $('html').animate({
-            scrollTop: $(window).height() * 1.4 + window.pageYOffset
-        }, 350);
-        $('body').animate({
-            scrollTop: $(window).height() * 1.4 + window.pageYOffset
-        }, 350);
-    }
-
-    function prev() {
-        $('html').animate({
-            scrollTop: $(window).height() * -1.4 + window.pageYOffset
-        }, 350);
-        $('body').animate({
-            scrollTop: $(window).height() * -1.4 + window.pageYOffset
-        }, 350);
-    }
-    </script>
+    <script type="text/javascript" async src="js/main.min.js"></script>
 </body>
 
 </html>

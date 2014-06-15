@@ -44,7 +44,7 @@
         <a href="surrealism.html" class="side-nav link">Surrealism</a>
         <br>
     </nav>
-    <h2 href id="scroll-down" data--1p="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-100p="transform:translate(0,40%) rotate(90deg);opacity:0;z-index:!20" data-101p="z-index:!-1" onclick="ScrollTo(1.41);">&gt;</h2>
+    <h2 href id="scroll-down" data--1p="transform[quadratic]:translate(0,-20%) rotate(90deg);opacity:1" data-100p="transform:translate(0,40%) rotate(90deg);opacity:0;z-index:!20" data-101p="z-index:!-1" onclick="ScrollTo(1.1);">&gt;</h2>
     <div class="full-width header fixed" data-0="transform[quadratic]:translate(0,0%);opacity:1" data-90p="transform[quadratic]:translate(0,-10%);opacity:0">
         <h1>
             Eden S.-G.
@@ -80,65 +80,15 @@
         </aside>
     </section>
 
-    <script type="text/javascript" async src="js/skrollr.min.js"></script>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/lightbox.js"></script>
-    <script type="text/javascript">
-    skrollr.init();
+    <div id="outdated">
+        <h6>Your browser is out-of-date!</h6>
+        <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a>
+        </p>
+        <p id="btnClose"><a href="#">Close</a>
+        </p>
+    </div>
 
-    $(document).ready(function() {
-        $('html').animate({
-            scrollTop: '0'
-        }, 100);
-        $('body').animate({
-            scrollTop: '0'
-        }, 100);
-        $('.fixed').css('position', 'fixed');
-        $("a#menu").mouseover(function() {
-            $(this).css('opacity', '0');
-            $("nav").addClass('shown');
-        });
-        $("nav").mouseleave(function(event) {
-            $(this).removeClass('shown');
-            $("a#menu").css('opacity', '1');
-        });
-        // for (var i = 0; i < $('section img').size(); i++) {
-
-        //         $('section img').eq(i).attr('src', $('section img').eq(i).attr('data-background'));
-        // };
-
-        for (var i = 0; i <= $('section img').size(); i++) {
-            $('section img').eq(i).attr('src', $('section img').eq(i).attr('data-background'));
-        }
-    });
-
-    function ScrollTo(amount) {
-        $('html').animate({
-            scrollTop: $(window).height() * amount
-        }, 1000);
-        $('body').animate({
-            scrollTop: $(window).height() * amount
-        }, 1000);
-    }
-
-    function next() {
-        $('html').animate({
-            scrollTop: $(window).height() * 1.4 + window.pageYOffset
-        }, 350);
-        $('body').animate({
-            scrollTop: $(window).height() * 1.4 + window.pageYOffset
-        }, 350);
-    }
-
-    function prev() {
-        $('html').animate({
-            scrollTop: $(window).height() * -1.4 + window.pageYOffset
-        }, 350);
-        $('body').animate({
-            scrollTop: $(window).height() * -1.4 + window.pageYOffset
-        }, 350);
-    }
-    </script>
+    <script type="text/javascript" src="js/main.min.js"></script>
 </body>
 
 </html>

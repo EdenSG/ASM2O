@@ -25,6 +25,14 @@ $(document).ready(function() {
     for (var i = 0; i <= $('section img').size(); i++) {
         $('section img').eq(i).attr('src', $('section img').eq(i).attr('data-background'));
     }
+
+    //plugin function, place inside DOM ready function
+    outdatedBrowser({
+        bgColor: '#3f3f3f',
+        color: '#e3e3e3',
+        lowerThan: 'IE10'
+    })
+
 });
 
 function ScrollTo(amount) {
