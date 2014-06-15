@@ -181,7 +181,7 @@ aside a {
     font-weight: 100;
 }
 .header {
-    margin:200px auto;
+    padding-top:10%;
     width: 100%;
     text-align: center;
 }
