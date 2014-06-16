@@ -261,7 +261,7 @@ nav.shown {
 @media (min-width:1000px), (min-height:1000px) {
     html, body {
         font-size: 20px;
-        font-size: 2vmin;
+        font-size: 1vmax;
     }
     .header h1 {
         font-size: 6rem;
