@@ -97,7 +97,6 @@ img:not(.lb-image) {
     max-width: 100%;
     max-height: 100%;
     width: auto;
-    /*max-height: 100vh;*/
 }
 section.full-width:not(.audio) div {
     max-width: 100%;
