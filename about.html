@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script language="javascript">
+    if (document.location.protocol != "https:" && document.location.hostname != "localhost") {
+        document.location.href = "https://edensg.github.io" + document.location.pathname;
+    };
+    </script>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Typography</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.min.css" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://edensg.github.io/ASM2O/img/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://edensg.github.io/ASM2O/img/favicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Eden S.-G." />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="http://edensg.github.io/ASM2O/img/mstile-144x144.png" />
+    <style type="text/css">
+    #about {
+        float: none;
+        position: static;
+        text-align: left;
+        width: 30em;
+        line-height: 1.3em
+    }
+    #about a {
+        font-size: 1em;
+        font-weight: 500;
+        box-shadow: 0 1px 0 #666;
+        text-decoration: none;
+        -webkit-transition:font-size 0s, all 0.35s ease;
+        transition:font-size 0s, all 0.35s ease;
+    }
+    #about a:hover {
+        border-radius: 50%;
+        color: #333;
+        box-shadow: 0 1px 0 transparent;
+        -webkit-transition:font-size 0s, all 0.2s ease;
+        transition:font-size 0s, all 0.2s ease;
+    }
+    #about li {
+        text-indent: 0em;
+        list-style: disc outside none;
+    }
+    #about li li {
+        text-indent: 1em;
+        list-style: circle inside none;
+    }
+    #about p {
+        margin: 0.5em 0;
+    }
+    #left-align {
+        left:0;
+        position: fixed;
+        top:0;
+        width: 100%;
+        text-align: center;
+    }
+    #left-align h1, #left-align h3 {
+        display: inline-block;
+    }
+    #left-align h1 {
+        font-size: 2em;
+        font-weight: 500;
+    }
+    .header.no-padding-top {
+        padding-top: 3%
+    }
+    b {
+        color: #000;
+        font-weight: 500;
+    }
+    @media (max-width: 700px) {
+        #about {
+            width: 80%;
+            right: 0;
+        }
+    }
+    @media (min-aspect-ratio: 2/1) {
+        html, body {
+            font-size: 1vmax;
+        }
+    }
+    @media (max-width: 720px) {
+        #left-align {
+            visibility: hidden;
+        }
+        nav {
+            width: 80%;
+            right: -80%;
+        }
+        nav.shown {
+            -webkit-transform:translate(-100%, 0);
+            transform:translate(-100%, 0);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <a id="menu">Menu</a>
+    <nav>
+        <a class="side-nav link" href="index.html">Elements &amp; Principles</a>
+        <br/>
+        <a class="side-nav link" href="filters.html">Filters</a>
+        <br/>
+        <a class="side-nav link" href="triptych.html">Triptych</a>
+        <br/>
+        <a class="side-nav link" href="typography.html">Typography</a>
+        <br/>
+        <a href="soundscape.html" class="side-nav link">Soundscape</a>
+        <br>
+        <a href="stopmotion.html" class="side-nav link">Stop-motion</a>
+        <br>
+        <a href="surrealism.html" class="side-nav link">Surrealism</a>
+        <br>
+        <hr width="50%" align="left">
+        <a class="side-nav">About me</a>
+    </nav>
+    <div class="full-width header no-padding-top">
+        <div id="left-align" data-start="transform[swing]:translate(0%,0)" data-5p="transform:translate(-30%,0)">
+            <h3>
+                About
+            </h3>
+            <h1>
+                Eden S.-G.
+            </h1>
+        </div>
+        <aside id="about">
+            <p>I am inspired by:</p>
+            <ul>
+                <li>The Internet (as a concept, as well as as a global phenomenon)</li>
+                <li><a href="http://creativecommons.org/">Creative Commons</a>, <a href="http://opensource.org/">Open Source</a>
+                </li>
+                <li>People exploring what art and literature can be:
+                    <ul>
+                        <li><a href="http://johncage.org/">John Cage</a>
+                        </li>
+                        <li><a href="http://craphound.com/">Cory Doctorow</a>
+                        </li>
+                        <li><a href="http://www.brian-eno.net/">Brian Eno</a>
+                        </li>
+                        <li><a href="http://en.wikipedia.org/wiki/Peter_Schmidt_(artist)">Peter Schmidt</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>The <a href="http://en.wikipedia.org/wiki/Oblique_Strategies">Oblique Strategies</a>
+                </li>
+                <li>The I Ching</li>
+            </ul>
+            <p>I value counterculture.</p>
+            <p>I respect questions.<span data-100="opacity:0" data-110="opacity:1">.</span><span data-110="opacity:0" data-120="opacity:1">.</span><span data-120="opacity:0" data-130="opacity:1">.</span><span data-130="opacity:0" data-140="opacity:1">?</span>
+            </p>
+            <p>I enjoy collaboration.</p>
+            <p>I appreciate change and adaptation.</p>
+            <p>I try come to creativity with a blank slate - I like to think of my art as a constant improvisation. That said, I am always working off the work of others: I believe that everything is a remix in some way.</p>
+            <p>I try to live in the moment as I work, letting the process ebb and flow on its own. As a musician and a musical improviser, I attempt to bring the idea of exploration to my visual and multimedia art. Instead of going directly from <b>A</b> to <b>B</b>, I like to start at <b>A</b>, wander a little, find <b>C</b>, look around and see <b>D</b>, and trip over <b>J</b> to run into <b>W</b>. I start out not knowing where I'm going to end up.</p>
+            <p>I would like to bring empathy into more of the world. I want others to see what I do, to think about it, and be inspired to create something of their own, whatever that may be. I think that artists should be able to limit themselves if they want to, but that no one else should place limitations on us. I hope to give people an opportunity to step back from their daily life and look at the world on a larger scale.</p>
+            <p>I enjoy using technologies in ways that are not intended. I am a tinkerer, a creator, and a hacker. I love opposites; and opposites of opposites, different from the original.</p>
+            <p>Messing up is OK. So is completely failing. If you have something to show, great. if not, try something completely different.</p>
+        </aside>
+    </div>
+
+
+    <script type="text/javascript" src="js/main.min.js"></script>
+</body>
+
+</html>

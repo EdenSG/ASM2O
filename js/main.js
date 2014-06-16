@@ -1,5 +1,3 @@
-skrollr.init();
-
 $(document).ready(function() {
     $('html, body').scrollTop(0);
     $('.fixed').css('position', 'fixed');
