@@ -88,9 +88,36 @@
             font-size: 1vmax;
         }
     }
-    @media (max-width: 720px) {
+    @media (max-aspect-ratio: 4/3) {
         #left-align {
-            visibility: hidden;
+            opacity: 0;
+            -webkit-transition:opacity 0.3s ease;
+            transition:opacity 0.3s ease;
+        }
+        #left-align.skrollable-before {
+            opacity: 1;
+        }
+    }
+    @media (max-width: 1300px) {
+        html, body {
+            font-size: 2vmin;
+        }
+    }
+    @media (max-width: 720px) {
+        html, body {
+            font-size: 15px;
+        }
+        #left-align {
+            opacity: 0;
+            -webkit-transition:opacity 0.3s ease;
+            transition:opacity 0.3s ease;
+        }
+        #left-align.skrollable-before {
+            opacity: 1;
+        }
+        #about {
+            width: 90%;
+            padding: 16px 4%;
         }
         nav {
             width: 80%;
@@ -125,7 +152,7 @@
         <a class="side-nav">About me</a>
     </nav>
     <div class="full-width header no-padding-top">
-        <div id="left-align" data-start="transform[swing]:translate(0%,0)" data-5p="transform:translate(-30%,0)">
+        <div id="left-align" data-2-start="transform[swing]:translate(0%,0)" data-5p="transform:translate(-35%,0)">
             <h3>
                 About
             </h3>
@@ -156,7 +183,11 @@
                 <li>The I Ching</li>
             </ul>
             <p>I value counterculture.</p>
-            <p>I respect questions.<span data-100="opacity:0" data-110="opacity:1">.</span><span data-110="opacity:0" data-120="opacity:1">.</span><span data-120="opacity:0" data-130="opacity:1">.</span><span data-130="opacity:0" data-140="opacity:1">?</span>
+            <p>I respect questions.
+                <span data-100="opacity:0" data-110="opacity:1">.</span>
+                <span data-110="opacity:0" data-120="opacity:1">.</span>
+                <span data-120="opacity:0" data-130="opacity:1">.</span>
+                <span data-130="opacity:0" data-140="opacity:1">?</span>
             </p>
             <p>I enjoy collaboration.</p>
             <p>I appreciate change and adaptation.</p>

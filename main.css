@@ -22,10 +22,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight:100
 }
 sup {
-    vertical-align:text-top
+    vertical-align:text-top;
 }
 sub {
-    vertical-align:text-bottom
+    vertical-align:text-bottom;
 }
 /* Google Fonts */
  @font-face {
@@ -52,29 +52,33 @@ sub {
     background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALklEQVQIW2N89+7dfwYgEBISYgTRMADmYJOEq0KXRNGOLIkigWwsI0gVusUgMQBVzxuZidEM8gAAAABJRU5ErkJggg==);
     -webkit-animation:fade-in 1.5s cubic-bezier(.55, .23, .3, 1) 1;
     animation:fade-in 1.5s cubic-bezier(.55, .23, .3, 1) 1;
+    -webkit-transform-origin:center 200px;
+    -ms-transform-origin:center 200px;
+    transform-origin:center 200px;
+    text-rendering: optimize-legibility;
 }
 @-webkit-keyframes fade-in {
     0% {
         opacity: 0;
-        -webkit-transform: scale(1, 1.02);
-        transform: scale(1, 1.02);
+        -webkit-transform: scale(1, 0.9);
+        transform: scale(1, 0.9);
     }
     100% {
         opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
     }
 }
 @keyframes fade-in {
     0% {
         opacity: 0;
-        -webkit-transform: scale(1, 1.02);
-        transform: scale(1, 1.02);
+        -webkit-transform: scale(1, 0.9);
+        transform: scale(1, 0.9);
     }
     100% {
         opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
     }
 }
 ::-moz-selection {
@@ -285,9 +289,6 @@ nav.shown {
     -webkit-transform:translate(-100%, 0);
     -ms-transform:translate(-100%, 0);
     transform:translate(-100%, 0);
-    -webkit-transform:translate(-18vw, 0);
-    -ms-transform:translate(-18vw, 0);
-    transform:translate(-18vw, 0);
     -webkit-transition:all 0.5s 0.2s ease;
     transition:all 0.5s 0.2s ease;
     -webkit-box-shadow:0 0 0 9999px rgba(0, 0, 0, 0.4);
@@ -327,6 +328,18 @@ nav.shown {
     }
     .header h3 {
         font-size: 3rem;
+    }
+}
+@media (max-width: 1000px) {
+    nav {
+        width: 60%;
+        right: -60%;
+    }
+}
+@media (max-width: 720px) {
+    nav {
+        width: 80%;
+        right: -80%;
     }
 }
 @media (max-aspect-ratio:7/8) {
