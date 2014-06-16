@@ -19,7 +19,6 @@ ol, ul {
 }
 h1, h2, h3, h4, h5, h6 {
     font-size:100%;
-    font-weight:100
 }
 sup {
     vertical-align:text-top;
@@ -29,18 +28,6 @@ sub {
 }
 /* Google Fonts */
 
-/*@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Raleway Thin'), local('Raleway-Thin'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/RJMlAoFXXQEzZoMSUteGWLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-}*/
- @font-face {
-    font-family:'Raleway';
-    font-style: normal;
-    font-weight: 100;
-    src: local('Raleway Thin'), local('Raleway-Thin'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/RJMlAoFXXQEzZoMSUteGWLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
-}
 @font-face {
     font-family:'Raleway';
     font-style: normal;
@@ -113,7 +100,6 @@ section.full-width:not(.audio) div {
 }
 h4, aside {
     display: inline-block;
-    overflow: scroll;
     padding:3%;
     background-color: rgba(255, 255, 255, 0.6);
     text-shadow: 0 0 10px rgba(255, 255, 255, 1);
@@ -185,7 +171,7 @@ aside a {
     text-align:center;
     bottom:20%;
     color:rgba(0, 0, 0, 0.5);
-    font-weight: 300;
+    font-weight: 200;
     z-index:2;
     font-size:3rem;
     cursor: pointer;
@@ -206,6 +192,7 @@ aside a {
     position: fixed;
     top:3vmin;
     right: 3vmin;
+    font-weight: 400;
     z-index: 99;
     font-size: 1em;
     cursor: pointer;
@@ -232,7 +219,7 @@ nav .side-nav {
     display: inline-block;
     margin-bottom: 4vh;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 200;
     color: #000;
     box-shadow: 0 2px 0 -1px #777;
     transition:all 0.5s ease;
