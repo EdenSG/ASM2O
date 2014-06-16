@@ -43,9 +43,7 @@ nav {
     -webkit-transition:all 0.5s ease;
     transition:all 0.5s ease;
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-box-shadow:0 0 9999px 9999px rgba(0, 0, 0, 0);
     box-shadow:0 0 9999px 9999px rgba(0, 0, 0, 0);
 }
 nav .side-nav {
@@ -53,31 +51,26 @@ nav .side-nav {
     margin-bottom: 4vh;
     text-decoration: none;
     color: #000;
-    -webkit-box-shadow: 0 2px 0 -1px #777;
     box-shadow: 0 2px 0 -1px #777;
     -webkit-transition:all 0.5s ease;
     transition:all 0.5s ease;
 }
 nav .side-nav.link {
     color: #fff;
-    -webkit-box-shadow: 0 2px 0 -1px #aaa;
     box-shadow: 0 2px 0 -1px #aaa;
 }
 nav .side-nav.link:hover {
     background-color: #888;
     border-radius: 3px;
-    -webkit-box-shadow: 0 0px #aaa;
     box-shadow: 0 0px #aaa;
     -webkit-transition:all 0.2s ease;
     transition:all 0.2s ease;
 }
 nav.shown {
     -webkit-transform:translate(-16vw, 0);
-    -ms-transform:translate(-16vw, 0);
     transform:translate(-16vw, 0);
     -webkit-transition:all 0.5s 0.2s ease;
     transition:all 0.5s 0.2s ease;
-    -webkit-box-shadow:0 0 9999px 9999px rgba(0, 0, 0, 0.4);
     box-shadow:0 0 9999px 9999px rgba(0, 0, 0, 0.4);
 }
 .window {
@@ -111,14 +104,12 @@ h4.nav a {
     -webkit-transition:all 0.4s ease;
     transition:all 0.4s ease;
     text-decoration: none;
-    -webkit-box-shadow: 0 1px 0 #000;
     box-shadow: 0 1px 0 #000;
     margin: 0;
     padding: 0;
 }
 h4.nav a:hover {
     opacity: 1;
-    -webkit-box-shadow: 0 1px 0 transparent;
     box-shadow: 0 1px 0 transparent;
     border-radius: 50%;
 }
@@ -173,7 +164,6 @@ h4.nav a:hover {
     z-index:2;
     font-size:3rem;
     -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     -webkit-animation:scrolldown 3s linear infinite;
     animation:scrolldown 3s linear infinite;
@@ -197,7 +187,6 @@ h4.nav a:hover {
 .images {
     background-color: #fff;
     background-position: center center;
-    -webkit-background-size: contain;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: none, url('img/Chromiumthrobber.svg');
@@ -205,12 +194,10 @@ h4.nav a:hover {
 }
 h1 {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: #fff;
     font-size: 3.75rem;
     text-align: center;
-    -webkit-box-shadow: 0 0 0 100vmax #fff;
     box-shadow: 0 0 0 100vmax #fff;
     border-radius: 3vmin;
     padding: 6vmin 10vmin 3vmin;

@@ -9,7 +9,6 @@
     position: relative;
 }
 .triptych div img:hover {
-    -webkit-box-shadow: 0 0 0 4px rgba(150, 150, 150, 0.7);
     box-shadow: 0 0 0 4px rgba(150, 150, 150, 0.7);
     z-index: 10;
 }

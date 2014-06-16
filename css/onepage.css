@@ -66,22 +66,18 @@ body, .onepage-wrapper, html {
     border-radius: 50px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3), 0 0 0 20px rgba(255, 255, 255, 0);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3), 0 0 0 20px rgba(255, 255, 255, 0);
     -webkit-transition:all 0.4s ease;
     transition:all 0.4s ease;
 }
 .onepage-pagination li a:hover:before {
-    -webkit-box-shadow: 0 0 0 20px rgba(0, 0, 0, 0), 0 0 0 2px rgba(25, 25, 25, 0.3);
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0), 0 0 0 2px rgba(25, 25, 25, 0.3);
 }
 .onepage-pagination li a.active:before {
     background: transparent;
     border-color: transparent;
     -webkit-transform: scale(2);
-    -ms-transform: scale(2);
     transform: scale(2);
-    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 1), 0 0 0 3px rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 1), 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {

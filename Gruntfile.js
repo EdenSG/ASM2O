@@ -13,8 +13,8 @@ module.exports = function(grunt) {
                 },
             },
             css: {
-                files: ['*.css'],
-                tasks: ['cssmin'],
+                files: ['css/*.css'],
+                tasks: ['autoprefixer', 'cssmin'],
                 options: {
                     spawn: false,
                     interupt: true,
@@ -41,6 +41,14 @@ module.exports = function(grunt) {
                 }
             }
         },
+        autoprefixer: {
+            autoprefix: {
+                expand: true,
+                flatten: true,
+                src: 'css/*.css', // -> src/css/file1.css, src/css/file2.css
+                dest: '', // -> dest/css/file1.css, dest/css/file2.css
+            },
+        },
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -48,10 +56,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-css');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'cssmin']);
-    grunt.registerTask('serve', ['connect', 'watch']);
+    grunt.registerTask('compress', ['uglify', 'cssmin']);
+    grunt.registerTask('default', ['connect', 'watch']);
 
 };
