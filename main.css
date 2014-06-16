@@ -28,17 +28,23 @@ sub {
     vertical-align:text-bottom;
 }
 /* Google Fonts */
- @font-face {
-    font-family:Raleway;
-    font-style:normal;
-    font-weight:100;
-    src:local('Raleway Thin'), local('Raleway-Thin'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/RJMlAoFXXQEzZoMSUteGWLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff')
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/RJMlAoFXXQEzZoMSUteGWLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 @font-face {
-    font-family:Raleway;
-    font-style:normal;
-    font-weight:500;
-    src:local('Raleway Medium'), local('Raleway-Medium'), url(https://themes.googleusercontent.com/static/fonts/raleway/v7/CcKI4k9un7TZVWzRVT-T873hpw3pgy2gAi-Ip7WPMi0.woff) format('woff')
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/-_Ctzj9b56b8RgXW8FArib3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/CcKI4k9un7TZVWzRVT-T873hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
 }
 /* Main stylesheet */
  body {
@@ -264,6 +270,7 @@ nav .side-nav {
     margin-bottom: 4vh;
     text-decoration: none;
     color: #000;
+    font-weight: 300;
     -webkit-box-shadow: 0 2px 0 -1px #777;
     box-shadow: 0 2px 0 -1px #777;
     -webkit-transition:all 0.5s ease;
