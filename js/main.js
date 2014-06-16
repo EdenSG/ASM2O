@@ -5,8 +5,12 @@ $(document).ready(function() {
         $(this).css('opacity', '0');
         $("nav").addClass('shown');
     });
-    $("nav").mouseleave(function(event) {
+    $("nav").mouseleave(function() {
         $(this).removeClass('shown');
+        $("a#menu").css('opacity', '1');
+    });
+    $("*:not('.shown')").click(function() {
+        $('nav').removeClass('shown');
         $("a#menu").css('opacity', '1');
     });
     // for (var i = 0; i < $('section img').size(); i++) {
