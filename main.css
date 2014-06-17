@@ -15,7 +15,7 @@ address, caption, cite, code, dfn, em, strong, th, var {
     font-weight:400
 }
 ol, ul {
-    list-style:none
+    list-style:disc inside;
 }
 h1, h2, h3, h4, h5, h6 {
     font-size:100%;
@@ -116,11 +116,8 @@ img:not(.lb-image) {
 section.full-width:not(.audio) div {
     max-width: 100%;
     max-height: 80%;
+    width: 100%;
     text-align: center;
-    -webkit-box-flex: 3;
-    -webkit-flex: 3 1 auto;
-    -ms-flex: 3 1 auto;
-    flex: 3 1 auto;
 }
 h4, aside {
     display: inline-block;
@@ -131,10 +128,6 @@ h4, aside {
     font-weight: 500;
     border-radius: 0.3rem;
     width: 30%;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 7em;
-    -ms-flex: 1 0 7em;
-    flex: 1 0 7em;
 }
 h4 {
     width: auto;
