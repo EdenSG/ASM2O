@@ -237,6 +237,13 @@ aside {
     padding: 4vmin;
     margin: 0;
 }
+aside p {
+    margin-bottom: 1em;
+    line-height: 1.5em;
+}
+aside p:last-of-type {
+    margin-bottom: 0;
+}
 @media (max-width:400px), (max-height:400px) {
     html, body {
         font-size:15px;
