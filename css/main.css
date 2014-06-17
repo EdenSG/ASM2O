@@ -27,7 +27,7 @@ sub {
     vertical-align:text-bottom;
 }
 /* Google Fonts */
-@font-face {
+ @font-face {
     font-family:'Raleway';
     font-style: normal;
     font-weight: 200;
@@ -209,7 +209,7 @@ nav {
     width: 18vw;
     height: 100%;
     padding: 6px;
-    transition:all 0.5s ease;
+    transition:all 0.5s cubic-bezier(.7,-0.07,.88,.98);
     box-sizing: border-box;
     box-shadow:0 0 0 9999px transparent;
 }
@@ -237,7 +237,7 @@ nav .side-nav.link:hover {
 }
 nav.shown {
     transform:translate(-100%, 0);
-    transition:all 0.5s 0.2s ease;
+    transition:all 0.5s 0.2s cubic-bezier(.34,1.55,.48,.91);
     box-shadow:0 0 0 9999px rgba(0, 0, 0, 0.4);
 }
 @keyframes scrolldown {

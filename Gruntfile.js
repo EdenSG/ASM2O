@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         },
         uglify: {
             build: {
-                src: ['js/skrollr.min.js', 'js/jquery-1.11.0.min.js', 'js/lightbox.js', 'js/main.js', 'js/outdatedBrowser.js'],
+                src: ['js/skrollr.min.js', 'js/skrollrinit.js', 'js/jquery-1.11.0.min.js', 'js/lightbox.js', 'js/main.js', 'js/outdatedBrowser.js'],
                 dest: 'js/main.min.js'
             }
         },
