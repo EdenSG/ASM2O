@@ -176,6 +176,9 @@ aside {
 aside p {
     color: #333;
 }
+aside p a {
+    font-size: 100%;
+}
 aside div {
     display: -webkit-box;
     display: -webkit-flex;
