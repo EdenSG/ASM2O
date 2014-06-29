@@ -197,7 +197,7 @@ h4.nav a:hover {
 .images {
     background-color: #fff;
     background-position: center center;
-    -webkit-background-size: contain;
+    -webkit-background-size: contain contain;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: none, url('img/Chromiumthrobber.svg');

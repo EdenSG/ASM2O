@@ -3,7 +3,7 @@
 
 <head>
     <script language="javascript">
-    if (document.location.protocol != "https:" && document.location.hostname != "localhost") {
+    if (document.location.protocol != "https:" && document.location.hostname == "edensg.github.io") {
         document.location.href = "https://edensg.github.io" + document.location.pathname;
     };
     </script>
@@ -26,14 +26,14 @@
     body, html {
         background-attachment: fixed;
     }
-    #about {
+    .about {
         float: none;
         position: static;
         text-align: left;
         width: 32em;
         line-height: 1.3em
     }
-    #about a, b {
+    .about a, b {
         font-size: 1em;
         font-weight: 500;
         box-shadow: 0 1px 0 #666;
@@ -41,22 +41,22 @@
         -webkit-transition:font-size 0s, all 0.35s ease;
         transition:font-size 0s, all 0.35s ease;
     }
-    #about a:hover {
+    .about a:hover {
         border-radius: 50%;
         color: #333;
         box-shadow: 0 1px 0 transparent;
         -webkit-transition:font-size 0s, all 0.2s ease;
         transition:font-size 0s, all 0.2s ease;
     }
-    #about li {
+    .about li {
         text-indent: 0em;
         list-style: disc inside none;
     }
-    #about li li {
+    .about li li {
         text-indent: 1em;
         list-style: circle inside none;
     }
-    #about p {
+    .about p {
         margin: 0.5em 0;
     }
     #left-align {
@@ -81,7 +81,7 @@
         font-weight: 500;
     }
     @media (max-width: 700px) {
-        #about {
+        .about {
             width: 80%;
             right: 0;
         }
@@ -118,7 +118,7 @@
         #left-align.skrollable-before {
             opacity: 1;
         }
-        #about {
+        .about {
             width: 90%;
             padding: 16px 4%;
         }
@@ -164,7 +164,7 @@
                 Eden S.-G.
             </h1>
         </div>
-        <aside id="about">
+        <aside class="about" id="skrollr-body">
             <p>I am inspired by:</p>
             <ul>
                 <li>The Internet (as a concept, as well as as a global phenomenon)</li>

@@ -1,5 +1,6 @@
-skrollr.init({
+var s = skrollr.init(
     mobileCheck = function() {
-        return false;
-    }
-});
+        return false
+    };
+    // edgeStrategy='ease'
+);

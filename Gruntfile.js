@@ -33,11 +33,24 @@ module.exports = function(grunt) {
                 dest: 'main.min.css'
             }
         },
-        connect: {
-            server: {
+        // connect: {
+        //     server: {
+        //         options: {
+        //             port: 8000,
+        //             hostname: 'localhost',
+        //         }
+        //     }
+        // },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src: ['css/*.css', '*.html', 'js/*.js']
+                },
                 options: {
-                    port: 8000,
-                    hostname: 'localhost',
+                    watchTask: true,
+                    server: {
+                        baseDir: "./"
+                    }
                 }
             }
         },
@@ -55,12 +68,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-css');
-    grunt.loadNpmTasks('grunt-contrib-connect');
+    // grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-browser-sync');
 
 
     // Default task(s).
     grunt.registerTask('compress', ['uglify', 'cssmin']);
-    grunt.registerTask('default', ['connect', 'watch']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 
 };

@@ -1,17 +1,17 @@
 $(document).ready(function() {
     $('html, body').scrollTop(0);
     $('.fixed').css('position', 'fixed');
-    $("a#menu").mouseover(function() {
-        $(this).css('opacity', '0');
+    $("a#menu").bind('mouseenter touchstart', function() {
+        $(this).addClass('hide-me');
         $("nav").addClass('shown');
     });
-    $("nav").mouseleave(function() {
+    $("nav").bind('mouseleave focusout', function() {
         $(this).removeClass('shown');
-        $("a#menu").css('opacity', '1');
+        $("a#menu").removeClass('hide-me');
     });
     $("*:not('.shown')").click(function() {
         $('nav').removeClass('shown');
-        $("a#menu").css('opacity', '1');
+        $("a#menu").removeClass('hide-me');
     });
     // for (var i = 0; i < $('section img').size(); i++) {
 
