@@ -1,6 +1,6 @@
 var s = skrollr.init(
     mobileCheck = function() {
-        return false
+        return true
     };
-    // edgeStrategy='ease'
+    edgeStrategy='ease'
 );

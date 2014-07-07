@@ -1,13 +1,16 @@
 $(document).ready(function() {
     $('html, body').scrollTop(0);
     $('.fixed').css('position', 'fixed');
-    $("a#menu").bind('mouseenter touchstart', function() {
+    $("#menu").bind('mouseenter touchstart mouseover click', function() {
         $(this).addClass('hide-me');
         $("nav").addClass('shown');
     });
     $("nav").bind('mouseleave focusout', function() {
         $(this).removeClass('shown');
         $("a#menu").removeClass('hide-me');
+    });
+    $('#scroll-down').click(function() {
+        ScrollTo(1.41);
     });
     $("*:not('.shown')").click(function() {
         $('nav').removeClass('shown');

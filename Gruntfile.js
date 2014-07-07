@@ -52,6 +52,17 @@ module.exports = function(grunt) {
                         baseDir: "./"
                     }
                 }
+            },
+            host: {
+                bsFiles: {
+                    src: ['css/*.css', '*.html', 'js/*.js']
+                },
+                options: {
+                    watchTask: false,
+                    server: {
+                        baseDir: "./"
+                    }
+                }
             }
         },
         autoprefixer: {
@@ -74,7 +85,9 @@ module.exports = function(grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('compress', ['uglify', 'cssmin']);
-    grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('default', ['uglify', 'autoprefixer', 'cssmin']);
+    grunt.registerTask('serve', ['browserSync:dev', 'watch']);
+    grunt.registerTask('host', 'browserSync:host');
+
 
 };
